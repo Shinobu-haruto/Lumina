@@ -1,0 +1,37 @@
+/* --- EL CONTENEDOR FLOTANTE --- */
+popover {
+    background-color: @lumina_bg;
+    border-radius: @radius_button; /* 6px para un look suave pero técnico */
+    border: 1px solid @lumina_outline;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05); /* Sombra sólida "Swiss Style" */
+    padding: 6px;
+    margin: 4px;
+}
+
+/* El "triangulito" o flecha del popover */
+popover > contents {
+    background-color: @lumina_bg;
+    border-radius: 6px;
+}
+
+/* --- ELEMENTOS DENTRO DEL POPOVER --- */
+popover modelbutton {
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 4px; /* Un poco más recto para el contenido interno */
+    transition: all 150ms ease;
+    color: @lumina_text;
+}
+
+popover modelbutton:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+    color: @lumina_primary;
+}
+
+/* Separadores internos modernos */
+popover separator {
+    background-color: @lumina_outline;
+    margin: 4px 8px;
+    min-height: 1px;
+    opacity: 0.2;
+}

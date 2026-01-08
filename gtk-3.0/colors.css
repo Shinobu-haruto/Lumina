@@ -1,0 +1,28 @@
+/* --- PALETA BASE (LIGHT MODE) --- */
+@define-color lumina_primary #6750A4;         /* Morado Material */
+@define-color lumina_on_primary #FFFFFF;      /* Texto sobre morado */
+@define-color lumina_primary_container #EADDFF; /* Fondos de botones suaves */
+
+@define-color lumina_bg #FDF8FF;              /* Fondo de ventana principal */
+@define-color lumina_surface #F3EDF7;         /* Barras laterales y búsqueda */
+@define-color lumina_card #FFFFFF;            /* El blanco puro de las tarjetas */
+
+@define-color lumina_text #1C1B1F;            /* Texto principal (90% Negro) */
+@define-color lumina_text_secondary #49454F;  /* Texto de apoyo o descripción */
+
+/* --- ESTADOS Y ACCIONES --- */
+@define-color lumina_success #2E7D32;
+@define-color lumina_error #B3261E;
+@define-color lumina_warning #F9A825;
+
+/* --- SOMBRAS Y BORDES (TRANSPARENCIAS) --- */
+@define-color lumina_outline rgba(121, 116, 126, 0.2); /* Bordes sutiles */
+@define-color lumina_shadow_sm rgba(0, 0, 0, 0.1);     /* Sombra para elevación baja */
+@define-color lumina_shadow_lg rgba(0, 0, 0, 0.15);    /* Sombra para tarjetas al hacer hover */
+
+/* --- COMPATIBILIDAD CON GTK 3 --- */
+/* Estas variables ayudan a que aplicaciones viejas hereden el estilo */
+@define-color theme_fg_color @lumina_text;
+@define-color theme_bg_color @lumina_bg;
+@define-color theme_selected_bg_color @lumina_primary;
+@define-color theme_selected_fg_color @lumina_on_primary;

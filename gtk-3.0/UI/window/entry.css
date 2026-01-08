@@ -1,0 +1,32 @@
+/* --- CAMPO DE TEXTO (ENTRY) --- */
+entry {
+    min-height: 32px;
+    padding: 6px 10px;
+    border-radius: 8px 8px 0 0; /* Solo redondeamos las esquinas superiores */
+    border: none;
+    border-bottom: 1px solid @lumina_text_secondary; /* Línea base */
+    background-color: @lumina_surface;
+    color: @lumina_text;
+    box-shadow: none;
+    transition: all 250ms ease-out;
+}
+
+/* Estado al pasar el mouse */
+entry:hover {
+    background-color: shade(@lumina_surface, 0.95);
+    border-bottom-color: @lumina_text;
+}
+
+/* --- ESTADO FOCUS (CUANDO EL USUARIO ESCRIBE) --- */
+entry:focus {
+    background-color: shade(@lumina_surface, 0.9);
+    /* Línea de énfasis gruesa estilo Material */
+    border-bottom: 2px solid @lumina_primary;
+    box-shadow: none;
+}
+
+/* Texto de ayuda (Placeholder) */
+entry image.left, entry image.right {
+    color: @lumina_text_secondary;
+}
+

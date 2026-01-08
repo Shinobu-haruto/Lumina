@@ -1,0 +1,33 @@
+/* --- EL CANAL DEL SLIDER --- */
+scale trough {
+    background-color: @lumina_surface;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid @lumina_outline;
+}
+
+scale highlight {
+    background-color: @lumina_primary;
+    border-radius: 10px;
+}
+
+/* --- EL TIRADOR (SLIDER BUTTON) --- */
+scale slider {
+    background-color: @lumina_primary;
+    border-radius: 100%;
+    min-height: 16px;
+    min-width: 16px;
+    margin: -4px; /* Para que el círculo sea más grande que el canal */
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* Efecto al arrastrar o pasar el mouse */
+scale slider:hover {
+    box-shadow: 0 0 0 8px alpha(@lumina_primary, 0.15);
+}
+
+scale slider:active {
+    transform: scale(1.3); /* Crece ligeramente al presionarlo */
+    box-shadow: 0 0 0 12px alpha(@lumina_primary, 0.2);
+}
+

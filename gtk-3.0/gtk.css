@@ -1,0 +1,22 @@
+@import url("main.css");
+@import url("UI/window/buttons.css");
+@import url("UI/window/headerbar.css");
+@import url("UI/window/entry.css");
+@import url("UI/window/menus.css");
+@import url("UI/window/tabs.css");
+@import url("UI/window/slider.css");
+@import url("UI/window/switch.css");
+@import url("UI/window/popvers.css");
+@import url("UI/window/progressbar.css");
+@import url("UI/checkbox.css");
+@import url("colors.css");
+@import url("widgets.css");
+@import url("headerbar.css");
+
+/* Reset global para Lumina */
+* {
+    -GtkLabel-allow-focus: false;
+    -GtkWidget-focus-padding: 2;
+    -GtkWidget-focus-line-width: 2;
+    outline-radius: 12px;
+}

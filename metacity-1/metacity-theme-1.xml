@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<metacity_theme>
+  <info>
+    <name>Lumina</name>
+    <author>Shinobu-haruto</author>
+    <copyright>2026</copyright>
+  </info>
+
+  <frame_geometry name="geometry_balanced" rounded_top_left="true" rounded_top_right="true">
+    <distance name="left_width" value="1"/>
+    <distance name="right_width" value="1"/>
+    <distance name="bottom_height" value="4"/> <distance name="title_vertical_pad" value="12"/> <aspect_ratio name="button_aspect_ratio" value="1.0"/>
+    
+    <corner name="top_left" radius="4"/>
+    <corner name="top_right" radius="4"/>
+    <corner name="bottom_left" radius="0"/> <corner name="bottom_right" radius="0"/>
+  </frame_geometry>
+
+  <draw_ops name="draw_frame">
+    <rectangle color="@lumina_bg" x="0" y="0" width="width" height="height" filled="true"/>
+    
+    <line color="@lumina_primary" x1="0" y1="height-2" x2="width" y2="height-2" width="4"/>
+    
+    <rectangle color="@lumina_outline" x="0" y="0" width="width-1" height="height-1" filled="false"/>
+  </draw_ops>
+
+  <frame_style name="focused" geometry="geometry_balanced" draw_ops="draw_frame"/>
+  <frame_style_set name="main">
+    <frame focus="yes" state="normal" resize="both" style="focused"/>
+  </frame_style_set>
+
+  <window type="normal" style_set="main"/>
+</metacity_theme>
