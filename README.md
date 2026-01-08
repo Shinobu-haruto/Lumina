@@ -1,7 +1,6 @@
-# Lumina
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Shinobu-haruto/Lumina/main/logo-lumina.svg" width="180" alt="Lumina logo">
+  <img src="https://raw.githubusercontent.com/Shinobu-haruto/Lumina/main/assets/lumina-banner.svg" width="180" alt="Lumina logo">
 </p>
 
 <p align="center">
