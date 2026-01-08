@@ -43,3 +43,22 @@ button.destructive-action:hover {
     background-color: rgba(179, 38, 30, 0.08);
 }
 
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px @lumina_primary_container;
+    border-color: @lumina_primary;
+}
+
+button:active {
+    transform: translate(0, 0) scale(0.97);
+    box-shadow: none;
+}
+
+button:disabled {
+    background-color: @lumina_surface;
+    color: @lumina_text_secondary;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.6;
+}
