@@ -5,6 +5,7 @@
 
 <p align="center">
   Lumina
+
 # 🇺🇸 English
 
 Lumina is a modern UI vision for GTK 3, with GTK 4 being actively improved, created for those who seek real clarity in the Linux desktop.
