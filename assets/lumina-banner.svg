@@ -1,0 +1,67 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1200 360"
+  width="1200"
+  height="360"
+  role="img"
+  aria-label="Lumina UI banner">
+
+  <rect width="1200" height="360" rx="28" fill="#FDF8FF"/>
+
+  <circle cx="260" cy="180" r="160" fill="#EADDFF"/>
+
+  <circle
+    cx="260"
+    cy="180"
+    r="120"
+    fill="none"
+    stroke="rgba(103,80,164,0.25)"
+    stroke-width="10"/>
+
+  <path
+    d="
+      M260 108
+      L286 164
+      L342 180
+      L286 196
+      L260 252
+      L234 196
+      L178 180
+      L234 164
+      Z"
+    fill="#6750A4"/>
+
+  <path
+    d="
+      M260 132
+      L276 170
+      L314 180
+      L276 190
+      L260 228
+      L244 190
+      L206 180
+      L244 170
+      Z"
+    fill="#FFFFFF"
+    opacity="0.9"/>
+
+  <text
+    x="520"
+    y="170"
+    font-size="72"
+    font-weight="700"
+    font-family="Inter, Cantarell, Segoe UI, sans-serif"
+    fill="#6750A4">
+    Lumina
+  </text>
+
+  <text
+    x="520"
+    y="220"
+    font-size="26"
+    font-weight="400"
+    font-family="Inter, Cantarell, Segoe UI, sans-serif"
+    fill="#49454F">
+    UI vision for GTK 3 · GTK 4 in progress
+  </text>
+</svg>
