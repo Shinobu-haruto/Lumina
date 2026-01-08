@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Lumina Logo">
+
+    <!-- Fondo -->
+    <rect width="256" height="256" rx="48" fill="#FDF8FF"></rect>
+
+    <!-- Anillo -->
+    <circle cx="128" cy="128" r="78" fill="none" stroke="#EADDFF" stroke-width="12"></circle>
+
+    <!-- Halo suave -->
+    <circle cx="128" cy="128" r="78" fill="none" stroke="rgba(103,80,164,0.25)" stroke-width="4"></circle>
+
+    <!-- Estrella / Luz central -->
+    <path d="
+        M128 72
+        L144 112
+        L184 128
+        L144 144
+        L128 184
+        L112 144
+        L72 128
+        L112 112
+        Z" fill="#6750A4"></path>
+
+    <!-- Brillo interior -->
+    <path d="
+        M128 92
+        L138 118
+        L164 128
+        L138 138
+        L128 164
+        L118 138
+        L92 128
+        L118 118
+        Z" fill="#FFFFFF" opacity="0.85"></path>
+</svg>
