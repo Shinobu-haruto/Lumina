@@ -1,32 +1,23 @@
-/* ============================================================
-   LUMINA – HEADERBAR FIX (GTK 3.x)
-   ============================================================ */
 
-/* Headerbar real (CSD) */
 headerbar,
 headerbar.titlebar,
 headerbar:backdrop,
 headerbar.titlebar:backdrop {
     background-color: @lumina_bg;
     background-image: none;
-
-    min-height: 1.75em; /* 28px */
+    min-height: 1.75em;
     padding: 0 0.75em;
-
     border: none;
     border-bottom: 0.0625em solid @lumina_outline;
-
     box-shadow: none;
 }
 
-/* Contenedor interno (CRÍTICO) */
 headerbar > box,
 headerbar.titlebar > box {
     background-color: @lumina_bg;
     background-image: none;
 }
 
-/* Asegura que el título se vea */
 headerbar .title {
     font-weight: 700;
     font-size: 1em;
@@ -38,7 +29,6 @@ headerbar .subtitle {
     color: @lumina_text_secondary;
 }
 
-/* Botones */
 headerbar button {
     min-width: 2.375em;
     min-height: 2.375em;
