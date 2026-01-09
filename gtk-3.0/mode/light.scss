@@ -1,0 +1,37 @@
+/* --- COLORES DE ACENTO (M3 DARK) --- */
+@define-color lumina_primary #D0BCFF;         /* Morado más claro para contraste en negro */
+@define-color lumina_on_primary #381E72;      /* Texto oscuro sobre morado claro */
+@define-color lumina_primary_container #4F378B; /* Fondo de botón oscuro */
+
+/* --- SUPERFICIES --- */
+@define-color lumina_bg #1C1B1F;              /* Fondo profundo (Nivel 0) */
+@define-color lumina_surface #25232A;         /* Barras y búsqueda (Nivel 1) */
+@define-color lumina_card #312E37;            /* Tarjetas y Popovers (Nivel 2) */
+
+/* --- TIPOGRAFÍA --- */
+@define-color lumina_text #E6E1E5;            /* Texto principal (Gris muy claro) */
+@define-color lumina_text_secondary #938F99;  /* Texto de apoyo */
+
+/* --- ESTADOS --- */
+@define-color lumina_success #81C784;         /* Verde pastel para modo oscuro */
+@define-color lumina_error #F2B8B5;           /* Rojo pastel */
+@define-color lumina_warning #FFCC80;         /* Ámbar pastel */
+
+/* --- SOMBRAS Y BORDES --- */
+/* En modo oscuro, los bordes son más claros y las sombras más densas */
+@define-color lumina_outline rgba(147, 143, 153, 0.2); 
+@define-color lumina_shadow_sm rgba(0, 0, 0, 0.4);
+@define-color lumina_shadow_lg rgba(0, 0, 0, 0.6);
+
+/* --- COMPATIBILIDAD GTK 3 --- */
+@define-color theme_fg_color @lumina_text;
+@define-color theme_bg_color @lumina_bg;
+@define-color theme_selected_bg_color @lumina_primary;
+@define-color theme_selected_fg_color @lumina_on_primary;
+
+/* Alias técnicos para que los widgets no fallen */
+@define-color anime_cyan #80DEEA;
+@define-color accent @lumina_primary;
+@define-color border_col @lumina_outline;
+@define-color bg_base @lumina_surface;
+@define-color bg_widgets @lumina_card;

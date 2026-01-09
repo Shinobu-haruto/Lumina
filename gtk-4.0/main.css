@@ -1,17 +1,14 @@
 /* ============================================================
-   LUMINA – WINDOW CORE (GTK 3.x / Cinnamon)
-   Escala base: em (1em ≈ 16px)
+   LUMINA – WINDOW CORE (GTK 4)
    ============================================================ */
 
 /* --- LA VENTANA PRINCIPAL --- */
 window,
 window:backdrop {
     outline: none;
-
     background-color: @lumina_bg;
     background-image: none;
     color: @lumina_text;
-
     border: none;
 }
 
@@ -19,20 +16,17 @@ window:backdrop {
 window.csd,
 window.csd:backdrop {
     background-color: @lumina_bg;
-    background-image: none;
-
-    border-radius: 0.25em; /* 4px */
+    border-radius: 0.25em;
     border: 0.0625em solid @lumina_outline;
-
-    margin: 0; /* ✅ crítico */
+    margin: 0;
 }
 
-/* Aire interno SIN afectar tamaño */
+/* Aire interno */
 window.csd > decoration {
     padding: 0.5em;
 }
 
-/* --- CSD CON FOCO --- */
+/* CSD con foco */
 window.csd:not(.maximized):not(.fullscreen) {
     box-shadow:
         0 0 0 0.0625em @lumina_outline,
@@ -40,7 +34,7 @@ window.csd:not(.maximized):not(.fullscreen) {
         0 0.5em 1.25em alpha(black, 0.18);
 }
 
-/* --- CSD SIN FOCO --- */
+/* CSD sin foco */
 window.csd:backdrop:not(.maximized):not(.fullscreen) {
     box-shadow:
         0 0 0 0.0625em @lumina_outline,
@@ -48,18 +42,14 @@ window.csd:backdrop:not(.maximized):not(.fullscreen) {
         0 0.375em 0.75em alpha(black, 0.1);
 }
 
-/* --- MAXIMIZADA / FULLSCREEN --- */
+/* Maximizada / fullscreen */
 window.maximized,
 window.fullscreen {
     border-radius: 0;
     margin: 0;
-
     background-color: @lumina_bg;
-    background-image: none;
-
     box-shadow: none;
-
-    border-bottom: 0.3125em solid @lumina_primary; /* 5px */
+    border-bottom: 0.3125em solid @lumina_primary;
 }
 
 /* ============================================================
@@ -78,10 +68,8 @@ frame > label {
     font-weight: 700;
     color: @lumina_text;
     font-size: 0.9em;
-
     margin-bottom: 0.25em;
     margin-left: 0.375em;
-
     text-shadow: 0 0 0.1875em alpha(@anime_cyan, 0.5);
 }
 
@@ -108,7 +96,7 @@ separator.vertical {
 }
 
 /* ============================================================
-   LISTAS Y FILAS
+   LISTAS Y FILAS (Compatibles GTK 4)
    ============================================================ */
 
 list {
@@ -140,9 +128,8 @@ stack > box {
     color: @lumina_text;
 }
 
-/* Evita fondos fantasma en apps GNOME */
 stack > widget {
-    background-color: transparent;
+    background-color: transparent; /* se puede reemplazar por box o scrolledwindow */
 }
 
 /* ============================================================
@@ -154,12 +141,8 @@ scrolledwindow {
     border: none;
 }
 
-scrolledwindow > viewport {
-    background-color: transparent;
-}
-
 /* ============================================================
-   HEADERBAR – PRESENCIA CORE (NO ESTILO)
+   HEADERBAR – PRESENCIA CORE
    ============================================================ */
 
 headerbar {
@@ -172,7 +155,6 @@ window.csd > headerbar {
     margin: 0;
 }
 
-/* Backdrop coherente */
 window:backdrop headerbar {
     opacity: 0.95;
 }
@@ -202,7 +184,7 @@ toolbar {
 }
 
 /* ============================================================
-   BACKDROP GLOBAL (DESENFASADO)
+   BACKDROP GLOBAL
    ============================================================ */
 
 window:backdrop {
@@ -213,7 +195,6 @@ window:backdrop {
    PREVENCIÓN DE ESTIRAMIENTO VISUAL
    ============================================================ */
 
-/* Evita que GTK “rellene” verticalmente widgets raíz */
 window > box,
 window > stack {
     padding: 0;
@@ -229,12 +210,10 @@ dialog:backdrop {
     background-color: @lumina_bg;
     background-image: none;
     color: @lumina_text;
-
-    border-radius: 0.375em; /* 6px */
+    border-radius: 0.375em;
     border: 0.0625em solid @lumina_outline;
 }
 
-/* Contenedor interno real del diálogo */
 dialog > box {
     background-color: transparent;
     padding: 1em;
@@ -248,11 +227,9 @@ dialog headerbar {
     background-color: transparent;
     border: none;
     box-shadow: none;
-
     padding: 0.5em 0.75em;
 }
 
-/* Sin título “flotante” raro */
 dialog headerbar.titlebar {
     margin: 0;
 }
@@ -265,7 +242,6 @@ dialog .content-area {
     padding: 0.75em 0;
 }
 
-/* Texto y etiquetas */
 dialog label {
     color: @lumina_text;
 }
@@ -279,7 +255,6 @@ dialog .action-area {
     spacing: 0.5em;
 }
 
-/* Separación visual sutil tipo Fluent */
 dialog .action-area::before {
     content: "";
     display: block;

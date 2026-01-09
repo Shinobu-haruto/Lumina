@@ -1,0 +1,135 @@
+/* ============================================================
+   LUMINA – MEDIA PLAYERS (GTK 3.x)
+   Target: GNOME Videos, Lollypop, Rhythmbox, Audacious GTK
+   ============================================================ */
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL
+   ============================================================ */
+
+.media-player,
+.player {
+    background-color: transparent;
+}
+
+/* ============================================================
+   BARRA DE PROGRESO / SEEK BAR
+   ============================================================ */
+
+scale.horizontal trough {
+    background-color: alpha(@lumina_outline, 0.25);
+    border-radius: 999px;
+    min-height: 0.375em; /* 6px */
+}
+
+scale.horizontal slider {
+    background-color: @lumina_primary;
+    border-radius: 999px;
+    min-width: 0.75em;
+    min-height: 0.75em;
+
+    box-shadow:
+        0 0 0 0.125em alpha(@lumina_primary, 0.25);
+}
+
+/* Hover suave tipo Material */
+scale.horizontal slider:hover {
+    box-shadow:
+        0 0 0 0.1875em alpha(@lumina_primary, 0.35);
+}
+
+/* ============================================================
+   NIVEL / VOLUMEN
+   ============================================================ */
+
+volume scale trough {
+    background-color: alpha(@lumina_outline, 0.2);
+    min-height: 0.3125em;
+}
+
+volume scale slider {
+    background-color: @lumina_primary;
+}
+
+/* ============================================================
+   BOTONES DE CONTROL (PLAY / PAUSE / NEXT)
+   ============================================================ */
+
+.player button,
+.media-player button {
+    background-color: transparent;
+    border-radius: 999px;
+
+    padding: 0.5em;
+    min-width: 2.25em;
+    min-height: 2.25em;
+
+    transition: background-color 150ms ease, transform 120ms ease;
+}
+
+/* Hover */
+.player button:hover {
+    background-color: alpha(@lumina_primary, 0.12);
+}
+
+/* Click físico (Fluent-style) */
+.player button:active {
+    transform: scale(0.92);
+    background-color: alpha(@lumina_primary, 0.2);
+}
+
+/* Botón principal (Play) */
+.player button.suggested-action {
+    background-color: @lumina_primary;
+    color: @lumina_bg;
+}
+
+.player button.suggested-action:hover {
+    background-color: shade(@lumina_primary, 1.1);
+}
+
+/* ============================================================
+   TIEMPO / METADATA
+   ============================================================ */
+
+.player label,
+.media-player label {
+    color: @lumina_text_secondary;
+    font-size: 0.9em;
+}
+
+/* Tiempo actual destacado */
+.player .time-current {
+    color: @lumina_primary;
+    font-weight: 600;
+}
+
+/* ============================================================
+   LISTAS DE REPRODUCCIÓN
+   ============================================================ */
+
+.playlist,
+.tracklist {
+    background-color: @lumina_card;
+    border-radius: 0.375em;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* Pista activa */
+.tracklist row:selected {
+    background-color: alpha(@lumina_primary, 0.12);
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* ============================================================
+   OVERLAY DE VIDEO
+   ============================================================ */
+
+video overlay {
+    background: linear-gradient(
+        to top,
+        alpha(black, 0.45),
+        transparent 60%
+    );
+}
+

@@ -1,0 +1,149 @@
+###########################################################
+# LUMINA – GTK 2 THEME (gtkrc)
+# Escala base: px
+###########################################################
+
+# ==========================================================
+# PALETA DE COLORES (ajustar según Lumina)
+# ==========================================================
+style "lumina-colors" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#2D2A32"
+
+    fg[PRELIGHT] = "#FFFFFF"
+    bg[PRELIGHT] = "#3A3740"
+
+    fg[ACTIVE] = "#FFFFFF"
+    bg[ACTIVE] = "#4B4650"
+
+    fg[SELECTED] = "#FFFFFF"
+    bg[SELECTED] = "#5A5360"
+
+    text[NORMAL] = "#E0E0E0"
+    text[SELECTED] = "#FFFFFF"
+}
+
+# ==========================================================
+# VENTANAS PRINCIPALES
+# ==========================================================
+style "lumina-window" {
+    bg[NORMAL] = "#2D2A32"
+    fg[NORMAL] = "#E0E0E0"
+    xthickness = 1
+    ythickness = 1
+}
+
+class "GtkWindow" style "lumina-window"
+
+# ==========================================================
+# HEADERBAR / TITLEBAR
+# ==========================================================
+style "lumina-header" {
+    bg[NORMAL] = "#2D2A32"
+    fg[NORMAL] = "#E0E0E0"
+}
+
+widget "*GtkWindow*GtkToolbar" style "lumina-header"
+widget "*GtkWindow*GtkMenuBar" style "lumina-header"
+
+# ==========================================================
+# BOTONES
+# ==========================================================
+style "lumina-button" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#2D2A32"
+
+    fg[PRELIGHT] = "#FFFFFF"
+    bg[PRELIGHT] = "#3A3740"
+
+    fg[ACTIVE] = "#FFFFFF"
+    bg[ACTIVE] = "#4B4650"
+
+    xthickness = 1
+    ythickness = 1
+    font_name = "Sans Bold 10"
+}
+
+class "GtkButton" style "lumina-button"
+
+# ==========================================================
+# ENTRIES / CAMPOS DE TEXTO
+# ==========================================================
+style "lumina-entry" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#3A3740"
+    fg[SELECTED] = "#FFFFFF"
+    bg[SELECTED] = "#5A5360"
+    xthickness = 2
+    ythickness = 2
+}
+
+class "GtkEntry" style "lumina-entry"
+class "GtkTextView" style "lumina-entry"
+
+# ==========================================================
+# CHECKBOX Y RADIO BUTTON
+# ==========================================================
+style "lumina-toggle" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#2D2A32"
+    fg[PRELIGHT] = "#FFFFFF"
+    bg[PRELIGHT] = "#3A3740"
+    xthickness = 1
+    ythickness = 1
+}
+
+class "GtkCheckButton" style "lumina-toggle"
+class "GtkRadioButton" style "lumina-toggle"
+
+# ==========================================================
+# SCALE / SLIDER
+# ==========================================================
+style "lumina-scale" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#3A3740"
+    xthickness = 2
+    ythickness = 4
+}
+
+class "GtkHScale" style "lumina-scale"
+class "GtkVScale" style "lumina-scale"
+
+# ==========================================================
+# PROGRESSBAR / LEVELBAR
+# ==========================================================
+style "lumina-progress" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#3A3740"
+}
+
+class "GtkProgressBar" style "lumina-progress"
+
+# ==========================================================
+# LISTAS / TREEVIEW
+# ==========================================================
+style "lumina-treeview" {
+    fg[NORMAL] = "#E0E0E0"
+    bg[NORMAL] = "#2D2A32"
+    fg[SELECTED] = "#FFFFFF"
+    bg[SELECTED] = "#5A5360"
+    text[NORMAL] = "#E0E0E0"
+    text[SELECTED] = "#FFFFFF"
+}
+
+class "GtkTreeView" style "lumina-treeview"
+class "GtkTreeViewColumn" style "lumina-treeview"
+
+# ==========================================================
+# TOOLTIP
+# ==========================================================
+style "lumina-tooltip" {
+    fg[NORMAL] = "#F4EFF4"
+    bg[NORMAL] = "#322F37"
+    xthickness = 2
+    ythickness = 2
+    font_name = "Sans 10"
+}
+
+class "GtkTooltip" style "lumina-tooltip"
+

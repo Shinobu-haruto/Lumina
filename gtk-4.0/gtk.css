@@ -1,1 +1,26 @@
-@import url("interface/colors.css");
+@import url("main.css");
+@import url("application/filemanager.scss");
+@import url("application/players.scss");
+@import url("application/editors.scss");
+@import url("application/gnome.scss");
+@import url("interface/buttons.scss");
+@import url("interface/levelbar.scss");
+@import url("interface/headerbar.scss");
+@import url("interface/entry.scss");
+@import url("interface/menus.scss");
+@import url("interface/tabs.scss");
+@import url("interface/slider.scss");
+@import url("interface/switch.scss");
+@import url("interface/popvers.scss");
+@import url("interface/progressbar.scss");
+@import url("interface/checkbox.scss");
+@import url("mode/dark.scss");
+@import url("widgets.css");
+
+/* Reset global para Lumina */
+* {
+    -GtkLabel-allow-focus: false;
+    -GtkWidget-focus-padding: 2;
+    -GtkWidget-focus-line-width: 2;
+    outline-radius: 16px;
+}

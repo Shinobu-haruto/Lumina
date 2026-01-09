@@ -1,29 +1,96 @@
 <?xml version="1.0"?>
-<metacity_theme>
+<metacity_theme version="3">
+
 <info>
   <name>Lumina</name>
   <author>Shinobu-haruto</author>
+  <description>Lumina – minimal soft window theme</description>
 </info>
 
-<frame_geometry name="normal" rounded_top_left="true" rounded_top_right="true">
+<!-- ================= COLORS ================= -->
+
+<color name="lumina_bg" value="#1e1f26"/>
+<color name="lumina_primary" value="#7aa2f7"/>
+<color name="lumina_outline" value="#2a2c36"/>
+<color name="lumina_unfocused" value="#555a7a"/>
+
+<!-- ================= GEOMETRY ================= -->
+
+<frame_geometry name="normal"
+    title_height="28"
+    rounded_top_left="true"
+    rounded_top_right="true">
+
   <distance name="left_width" value="1"/>
   <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="4"/> <distance name="title_vertical_pad" value="12"/>
-  <corner name="top_left" radius="4"/>
-  <corner name="top_right" radius="4"/>
+  <distance name="bottom_height" value="4"/>
+
+  <distance name="title_vertical_pad" value="6"/>
+  <distance name="title_horizontal_pad" value="10"/>
+
+  <corner name="top_left" radius="6"/>
+  <corner name="top_right" radius="6"/>
 </frame_geometry>
 
-<draw_ops name="draw_frame_focused">
-  <rectangle color="@lumina_bg" x="0" y="0" width="width" height="height" filled="true"/>
-  <line color="@lumina_primary" x1="0" y1="height-2" x2="width" y2="height-2" width="4"/>
-  <rectangle color="@lumina_outline" x="0" y="0" width="width-1" height="height-1" filled="false"/>
+<!-- ================= DRAW OPS ================= -->
+
+<draw_ops name="frame_focused">
+  <rectangle color="lumina_bg"
+             x="0" y="0"
+             width="width"
+             height="height"
+             filled="true"/>
+
+  <line color="lumina_primary"
+        x1="0" y1="height-2"
+        x2="width" y2="height-2"
+        width="3"/>
+
+  <rectangle color="lumina_outline"
+             x="0" y="0"
+             width="width-1"
+             height="height-1"
+             filled="false"/>
 </draw_ops>
 
-<frame_style name="normal_focused" geometry="normal" draw_ops="draw_frame_focused"/>
+<draw_ops name="frame_unfocused">
+  <rectangle color="lumina_bg"
+             x="0" y="0"
+             width="width"
+             height="height"
+             filled="true"/>
+
+  <line color="lumina_unfocused"
+        x1="0" y1="height-2"
+        x2="width" y2="height-2"
+        width="3"/>
+
+  <rectangle color="lumina_outline"
+             x="0" y="0"
+             width="width-1"
+             height="height-1"
+             filled="false"
+             alpha="0.5"/>
+</draw_ops>
+
+<!-- ================= FRAME STYLES ================= -->
+
+<frame_style name="normal_focused"
+             geometry="normal"
+             draw_ops="frame_focused"/>
+
+<frame_style name="normal_unfocused"
+             geometry="normal"
+             draw_ops="frame_unfocused"/>
 
 <frame_style_set name="normal">
   <frame focus="yes" state="normal" resize="both" style="normal_focused"/>
+  <frame focus="no"  state="normal" resize="both" style="normal_unfocused"/>
 </frame_style_set>
 
+<!-- ================= WINDOWS ================= -->
+
 <window type="normal" style_set="normal"/>
+
 </metacity_theme>
+

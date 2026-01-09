@@ -1,0 +1,151 @@
+/* ============================================================
+   LUMINA – QT STYLE SHEET (QSS)
+   ============================================================ */
+
+/* --- COLORES BASE --- */
+* {
+    /* Fondo general */
+    background-color: #2D2A32; /* @lumina_bg */
+    color: #E0E0E0;            /* @lumina_text */
+    selection-background-color: rgba(63, 81, 181, 0.3); /* @lumina_primary alpha */
+    selection-color: #E0E0E0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+QPushButton {
+    border-radius: 10px;
+    border: 1px solid #C8C8C8;
+    padding: 6px 12px;
+    background-color: #2D2A32;
+    color: #E0E0E0;
+}
+
+QPushButton:hover {
+    background-color: rgba(63,81,181,0.08);
+    color: #3F51B5;
+}
+
+QPushButton:pressed {
+    background-color: rgba(63,81,181,0.2);
+    transform: scale(0.97);
+}
+
+QPushButton:disabled {
+    color: rgba(224,224,224,0.4);
+    background-color: rgba(224,224,224,0.1);
+    border-color: transparent;
+}
+
+/* ============================================================
+   CAMPOS DE TEXTO (QLineEdit / QTextEdit)
+   ============================================================ */
+QLineEdit, QTextEdit {
+    border-radius: 8px;
+    border: 1px solid rgba(224,224,224,0.5);
+    padding: 6px 10px;
+    background-color: #3A3740;
+    color: #E0E0E0;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #3F51B5;
+    background-color: rgba(224,224,224,0.05);
+}
+
+/* ============================================================
+   SLIDERS / PROGRESOS
+   ============================================================ */
+QSlider::groove:horizontal {
+    height: 8px;
+    background: #3A3740;
+    border-radius: 6px;
+}
+
+QSlider::handle:horizontal {
+    background: #3F51B5;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    margin: -4px 0;
+}
+
+QProgressBar {
+    border-radius: 6px;
+    border: 1px solid #C8C8C8;
+    background-color: #3A3740;
+    text-align: center;
+    color: #E0E0E0;
+}
+
+QProgressBar::chunk {
+    background-color: #3F51B5;
+    border-radius: 6px;
+}
+
+/* ============================================================
+   CHECKBOX Y RADIOBUTTON
+   ============================================================ */
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+QCheckBox::indicator {
+    border: 2px solid #C8C8C8;
+    border-radius: 4px;
+    background: transparent;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #3F51B5;
+    border-color: #3F51B5;
+}
+
+QRadioButton::indicator {
+    border: 2px solid #C8C8C8;
+    border-radius: 8px;
+    background: transparent;
+}
+
+QRadioButton::indicator:checked {
+    background-color: #3F51B5;
+    border-color: #3F51B5;
+}
+
+/* ============================================================
+   TAB WIDGET
+   ============================================================ */
+QTabWidget::pane {
+    border: 1px solid #C8C8C8;
+    border-radius: 8px;
+    background: #2D2A32;
+}
+
+QTabBar::tab {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(224,224,224,0.7);
+}
+
+QTabBar::tab:selected {
+    color: #3F51B5;
+    background: rgba(63,81,181,0.08);
+}
+
+/* ============================================================
+   TOOLTIP
+   ============================================================ */
+QToolTip {
+    background-color: #322F37;
+    color: #F4EFF4;
+    border-radius: 8px;
+    padding: 4px 8px;
+    border: none;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    font-size: 0.875em;
+}
+

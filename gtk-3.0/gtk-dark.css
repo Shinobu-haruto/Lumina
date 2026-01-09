@@ -14,7 +14,7 @@
 @import url("interface/popvers.scss");
 @import url("interface/progressbar.scss");
 @import url("interface/checkbox.scss");
-@import url("mode/dark.scss");
+@import url("mode/light.scss");
 @import url("widgets.css");
 
 /* Reset global para Lumina */
@@ -22,5 +22,5 @@
     -GtkLabel-allow-focus: false;
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 2;
-    outline-radius: 16px;
+    outline-radius: 12px;
 }

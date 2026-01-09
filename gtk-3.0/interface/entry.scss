@@ -1,0 +1,46 @@
+/* --- CAMPO DE TEXTO (ENTRY) --- */
+entry {
+    /* 32px -> 2em */
+    min-height: 2em;
+    /* 6px 10px -> 0.375em 0.625em */
+    padding: 0.375em 0.625em;
+    /* 8px -> 0.5em (Esquinas superiores suaves) */
+    border-radius: 0.5em 0.5em 0 0; 
+    border: none;
+    /* 1px -> 0.0625em */
+    border-bottom: 0.0625em solid alpha(@lumina_text_secondary, 0.5);
+    background-color: @lumina_surface;
+    color: @lumina_text;
+    box-shadow: none;
+    /* Transición más suave para el cambio de fondo y borde */
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado al pasar el mouse */
+entry:hover {
+    background-color: alpha(@lumina_text, 0.05); /* Un sutil tinte */
+    border-bottom-color: @lumina_text;
+}
+
+/* --- ESTADO FOCUS (CUANDO EL USUARIO ESCRIBE) --- */
+entry:focus {
+    background-color: alpha(@lumina_text, 0.08);
+    /* Línea de énfasis de 2px -> 0.125em */
+    /* Usamos una sombra interna para simular el grosor sin mover el texto (layout shift) */
+    box-shadow: inset 0 -0.125em 0 0 @lumina_primary;
+    border-bottom-color: @lumina_primary;
+}
+
+/* Texto de ayuda e iconos (Placeholder/Search Icons) */
+entry selection {
+    background-color: alpha(@lumina_primary, 0.3);
+    color: @lumina_text;
+}
+
+entry image.left, 
+entry image.right {
+    color: alpha(@lumina_text, 0.6);
+    /* 16px de icono -> 1em */
+    min-width: 1em;
+    min-height: 1em;
+}

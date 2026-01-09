@@ -1,0 +1,61 @@
+/* ============================================================
+   LUMINA – LEVELBAR CORE (GTK 4)
+   Escala base: em
+   ============================================================ */
+
+/* --- CONTENEDOR (TROUGH) --- */
+levelbar trough {
+    background-color: @lumina_surface;
+    background-image: none;
+
+    border: 0.0625em solid @lumina_outline;
+    border-radius: 0.375em;
+
+    padding: 0.125em;
+    min-height: 0.625em;
+}
+
+/* --- BLOQUES DE NIVEL --- */
+levelbar block {
+    background-clip: padding-box;
+
+    min-width: 0.375em;
+    margin: 0 0.0625em;
+
+    border-radius: 0.125em;
+    border: none;
+
+    transition: background-color 200ms ease,
+                box-shadow 200ms ease;
+}
+
+/* --- ESTADOS SEGÚN NIVEL --- */
+levelbar block.low {
+    background-color: @lumina_error;
+}
+
+levelbar block.medium {
+    background-color: @lumina_warning;
+}
+
+levelbar block.high,
+levelbar block.default {
+    background-color: @lumina_primary;
+}
+
+levelbar block.full {
+    background-color: @lumina_success;
+    box-shadow: 0 0 0.25em alpha(@lumina_success, 0.45);
+}
+
+/* --- ESTADO INACTIVO --- */
+levelbar block:disabled {
+    opacity: 0.6;
+}
+
+/* --- MODO OSCURO --- */
+.dark levelbar trough {
+    background-color: alpha(@lumina_text, 0.05);
+    border-color: alpha(@lumina_outline, 0.15);
+}
+

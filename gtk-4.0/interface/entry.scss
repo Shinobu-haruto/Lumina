@@ -1,0 +1,47 @@
+/* ============================================================
+   LUMINA – ENTRY / TEXTFIELD (GTK 4)
+   ============================================================ */
+
+/* --- CAMPO DE TEXTO (ENTRY) --- */
+entry {
+    min-height: 2em;                  /* 32px */
+    padding: 0.375em 0.625em;         /* 6px 10px */
+    border-radius: 0.5em 0.5em 0 0;   /* esquinas superiores suaves */
+
+    border: none;
+    border-bottom: 0.0625em solid alpha(@lumina_text_secondary, 0.5);
+
+    background-color: @lumina_surface;
+    color: @lumina_text;
+
+    transition:
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- HOVER --- */
+entry:hover {
+    background-color: alpha(@lumina_text, 0.05);
+    border-bottom-color: @lumina_text;
+}
+
+/* --- FOCUS (cuando el usuario escribe) --- */
+entry:focus {
+    background-color: alpha(@lumina_text, 0.08);
+    border-bottom-color: @lumina_primary;
+}
+
+/* --- SELECCIÓN DE TEXTO --- */
+entry text {
+    background-color: alpha(@lumina_primary, 0.3);
+    color: @lumina_text;
+}
+
+/* --- ICONOS / IMÁGENES --- */
+entry image.left,
+entry image.right {
+    color: alpha(@lumina_text, 0.6);
+    min-width: 1em;   /* 16px */
+    min-height: 1em;
+}
+

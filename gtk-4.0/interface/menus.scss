@@ -1,0 +1,80 @@
+/* ============================================================
+   LUMINA – MENUS & POPOVERS CORE (GTK 4)
+   ============================================================ */
+
+/* ============================================================
+   POPOVER BASE
+   ============================================================ */
+popover {
+    background-color: @lumina_card;
+    background-image: none;
+
+    border-radius: 0.75em; /* 12px */
+    border: 0.0625em solid @lumina_outline;
+
+    padding: 0;
+
+    box-shadow: 0 0.625em 2.5em alpha(black, 0.12);
+}
+
+/* Contenido interno real */
+popover > contents {
+    background-color: @lumina_card;
+    background-image: none;
+
+    padding: 0.5em 0;
+}
+
+/* Flecha del popover (si existe) */
+popover > arrow {
+    background: none;
+    border: none;
+}
+
+/* ============================================================
+   ELEMENTOS DEL MENÚ (GTK 4)
+   ============================================================ */
+
+/* modelbutton = item real de GtkPopoverMenu */
+popover modelbutton {
+    padding: 0.5em 1em;
+    margin: 0 0.375em;
+
+    border-radius: 0.375em;
+
+    color: @lumina_text;
+    background-color: transparent;
+
+    transition:
+        background-color 200ms ease,
+        color 200ms ease;
+}
+
+/* Hover */
+popover modelbutton:hover {
+    background-color: alpha(@lumina_primary, 0.1);
+    color: @lumina_primary;
+}
+
+/* Activo */
+popover modelbutton:active {
+    background-color: alpha(@lumina_primary, 0.2);
+}
+
+/* Deshabilitado */
+popover modelbutton:disabled {
+    color: alpha(@lumina_text, 0.4);
+}
+
+/* ============================================================
+   SEPARADORES
+   ============================================================ */
+popover separator {
+    background-color: @lumina_outline;
+
+    margin: 0.375em 0.25em;
+    min-height: 0.0625em;
+
+    opacity: 0.2;
+}
+

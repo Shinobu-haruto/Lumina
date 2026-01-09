@@ -1,0 +1,66 @@
+[general]
+name=Lumina
+button_layout=O|HMC
+border_width=2
+handle_width=8
+title_font=Sans Bold 10
+active_opacity=1.0
+inactive_opacity=0.95
+border_radius=6
+
+[colors]
+# Fondo del titlebar
+active_bg_color=#2D2A32      ; @lumina_bg
+inactive_bg_color=#2D2A32
+# Bordes de ventana
+active_border_color=#C8C8C8  ; @lumina_outline
+inactive_border_color=#A0A0A0
+# Texto del título
+active_title_color=#E0E0E0    ; @lumina_text
+inactive_title_color=#A0A0A0  ; @lumina_text_secondary
+# Botones de ventana (cerrar, minimizar, maximizar)
+button_fg_active=#E0E0E0
+button_bg_active=#3A3740
+button_fg_inactive=#A0A0A0
+button_bg_inactive=#2D2A32
+# Hover / Prelight
+button_fg_hover=#FFFFFF
+button_bg_hover=#4B4650
+# Presionado
+button_fg_pressed=#FFFFFF
+button_bg_pressed=#5A5460
+
+[frame]
+active_bg_color=#2D2A32
+inactive_bg_color=#2D2A32
+border_color=#C8C8C8
+border_width=2
+border_radius=6
+
+[title]
+active_fg_color=#E0E0E0
+inactive_fg_color=#A0A0A0
+active_bg_color=#2D2A32
+inactive_bg_color=#2D2A32
+font=Sans Bold 10
+padding=4
+
+[button]
+active_bg_color=#3A3740
+active_fg_color=#E0E0E0
+inactive_bg_color=#2D2A32
+inactive_fg_color=#A0A0A0
+hover_bg_color=#4B4650
+hover_fg_color=#FFFFFF
+pressed_bg_color=#5A5460
+pressed_fg_color=#FFFFFF
+border_width=1
+border_color=#C8C8C8
+radius=6
+
+[resize]
+handle_color=#E0E0E0
+handle_width=8
+
+[Desktop Entry]
+Name[es_MX]=themerc

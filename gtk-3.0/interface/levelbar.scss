@@ -1,0 +1,72 @@
+/* ============================================================
+   LUMINA – LEVELBAR CORE (GTK 3.x)
+   Escala base: em
+   ============================================================ */
+
+/* --- CONTENEDOR (TROUGH) --- */
+levelbar trough {
+    background-color: @lumina_surface;
+    background-image: none;
+
+    border: 0.0625em solid @lumina_outline;
+    border-radius: 0.375em;   /* 6px */
+
+    padding: 0.125em;         /* aire interno real */
+    min-height: 0.625em;      /* ~10px */
+}
+
+/* GTK a veces inserta una box interna */
+levelbar trough > box {
+    padding: 0;
+    background: none;
+}
+
+/* --- BLOQUES DE NIVEL --- */
+levelbar block {
+    background-clip: padding-box;
+
+    min-width: 0.375em;       /* 6px */
+    margin: 0 0.0625em;       /* 1px separación */
+
+    border-radius: 0.125em;   /* 2px técnico */
+    border: none;             /* 🔧 evita glitches */
+
+    transition: background-color 200ms ease,
+                box-shadow 200ms ease;
+}
+
+/* --- ESTADOS SEGÚN NIVEL --- */
+
+/* Crítico / Bajo */
+levelbar block.low {
+    background-color: @lumina_error;
+}
+
+/* Medio / Advertencia */
+levelbar block.medium {
+    background-color: @lumina_warning;
+}
+
+/* Alto / Normal */
+levelbar block.high,
+levelbar block.default {
+    background-color: @lumina_primary;
+}
+
+/* Lleno */
+levelbar block.full {
+    background-color: @lumina_success;
+    box-shadow: 0 0 0.25em alpha(@lumina_success, 0.45);
+}
+
+/* --- ESTADOS INACTIVOS --- */
+levelbar:backdrop block {
+    opacity: 0.6;
+}
+
+/* --- MODO OSCURO --- */
+.dark levelbar trough {
+    background-color: alpha(@lumina_text, 0.05);
+    border-color: alpha(@lumina_outline, 0.15);
+}
+

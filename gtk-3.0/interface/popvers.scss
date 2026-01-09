@@ -1,0 +1,78 @@
+/* ============================================================
+   LUMINA – POPOVERS CORE (GTK 3.x)
+   Escala base: em
+   ============================================================ */
+
+/* --- CONTENEDOR EXTERNO (SHELL) --- */
+popover {
+    background: none;        /* 🔧 GTK ignora esto, se limpia */
+    border: none;
+    box-shadow: none;
+    margin: 0.25em;
+}
+
+/* --- CAJA REAL DEL POPOVER (CRÍTICO) --- */
+popover > box {
+    background-color: @lumina_bg;
+    background-image: none;
+
+    border-radius: 0.375em;          /* 6px */
+    border: 0.0625em solid @lumina_outline;
+
+    padding: 0.375em;
+
+    /* Sombra Swiss sólida */
+    box-shadow: 0.25em 0.25em 0 alpha(black, 0.05);
+}
+
+/* Backdrop (sin foco) */
+popover:backdrop > box {
+    box-shadow: 0.1875em 0.1875em 0 alpha(black, 0.04);
+}
+
+/* --- FLECHA DEL POPOVER --- */
+popover arrow {
+    background-color: @lumina_bg;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* ============================================================
+   ELEMENTOS INTERNOS
+   ============================================================ */
+
+popover modelbutton {
+    min-height: 2em;                  /* 32px */
+    padding: 0.375em 0.75em;
+
+    border-radius: 0.25em;
+    background: none;
+
+    color: @lumina_text;
+
+    transition: background-color 150ms ease,
+                color 150ms ease;
+}
+
+popover modelbutton:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+    color: @lumina_primary;
+}
+
+/* Activo real */
+popover modelbutton:active {
+    background-color: alpha(@lumina_primary, 0.16);
+}
+
+/* ============================================================
+   SEPARADORES
+   ============================================================ */
+
+popover separator {
+    background-color: @lumina_outline;
+
+    margin: 0.25em 0.5em;
+    min-height: 0.0625em;
+
+    opacity: 0.2;
+}
+

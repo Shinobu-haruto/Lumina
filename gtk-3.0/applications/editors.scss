@@ -1,0 +1,141 @@
+/* ============================================================
+   LUMINA UI – EDITORS
+   Design system level: Material × Fluent
+   Target: Text editors & code editors (GTK 3.x)
+   ============================================================ */
+
+/* ============================================================
+   EDITOR SURFACE (CANVAS)
+   ============================================================ */
+
+textview,
+sourceview {
+    background-color: @lumina_card;
+    color: @lumina_text;
+
+    /* Editor como superficie elevada */
+    border-radius: 0.75em;
+    padding: 1em;
+
+    caret-color: @lumina_primary;
+
+    box-shadow:
+        0 0.0625em 0.125em alpha(black, 0.08),
+        0 0.375em 0.75em alpha(black, 0.06);
+
+    transition: box-shadow 200ms ease,
+                background-color 200ms ease;
+}
+
+/* Estado activo (focus) */
+textview:focus,
+sourceview:focus {
+    box-shadow:
+        0 0.0625em 0.125em alpha(black, 0.12),
+        0 0.5em 1.25em alpha(black, 0.10);
+}
+
+/* Fondo real interno */
+textview text,
+sourceview text {
+    background-color: transparent;
+}
+
+/* ============================================================
+   SELECCIÓN (Material-style)
+   ============================================================ */
+
+textview text selection,
+sourceview text selection {
+    background-color: alpha(@lumina_primary, 0.28);
+    color: @lumina_text;
+    border-radius: 0.125em;
+}
+
+/* Selección sin foco */
+textview:backdrop text selection,
+sourceview:backdrop text selection {
+    background-color: alpha(@lumina_primary, 0.18);
+}
+
+/* ============================================================
+   CARET (Fluent thin line)
+   ============================================================ */
+
+textview text cursor,
+sourceview text cursor {
+    background-color: @lumina_primary;
+}
+
+/* ============================================================
+   HIGHLIGHTS & SEARCH
+   ============================================================ */
+
+textview text highlight,
+sourceview text highlight {
+    background-color: alpha(@lumina_warning, 0.35);
+    color: @lumina_text;
+}
+
+textview text highlight:selected,
+sourceview text highlight:selected {
+    background-color: alpha(@lumina_primary, 0.45);
+}
+
+/* ============================================================
+   CURRENT LINE (Code editors)
+   ============================================================ */
+
+sourceview text:selected:focus,
+sourceview text:selected {
+    background-color: alpha(@lumina_primary, 0.16);
+}
+
+/* Línea activa (sutil Fluent) */
+sourceview text line:selected {
+    background-color: alpha(@lumina_primary, 0.06);
+}
+
+/* ============================================================
+   GUTTER / LINE NUMBERS (Fluent panel)
+   ============================================================ */
+
+.sourceview gutter {
+    background-color: alpha(@lumina_surface, 0.85);
+    color: @lumina_text_secondary;
+
+    padding: 0.375em 0.5em;
+    border-right: 0.0625em solid alpha(@lumina_outline, 0.6);
+}
+
+/* Línea actual */
+.sourceview gutter:selected {
+    color: @lumina_primary;
+    background-color: alpha(@lumina_primary, 0.08);
+}
+
+/* ============================================================
+   BACKDROP (DE-EMPHASIZED SURFACE)
+   ============================================================ */
+
+textview:backdrop,
+sourceview:backdrop {
+    background-color: alpha(@lumina_card, 0.7);
+    color: @lumina_text_secondary;
+
+    box-shadow:
+        0 0.0625em 0.125em alpha(black, 0.04);
+}
+
+/* ============================================================
+   READ-ONLY STATE (Material disabled surface)
+   ============================================================ */
+
+textview:disabled,
+sourceview:disabled {
+    background-color: @lumina_surface;
+    color: alpha(@lumina_text, 0.55);
+
+    box-shadow: none;
+}
+
