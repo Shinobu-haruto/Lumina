@@ -1,4 +1,4 @@
-/* --- BOTÓN BASE --- */
+
 button {
     padding: 0.5em 1em;
     border-radius: 0.65em;
@@ -11,25 +11,19 @@ button {
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Estado Hover (Elevación sutil tipo Fluent) */
 button:hover {
     background-color: alpha(@lumina_primary, 0.08); 
-    /* Sombra proporcional: 2px -> 0.125em */
     box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
-    /* Desplazamiento hacia arriba para indicar interactividad */
     transform: translateY(-0.0625em);
 }
 
-/* Estado Focus (Anillo de luz ajustable) */
 button:focus {
     outline: none;
-    /* 2px -> 0.125em | 4px -> 0.25em */
     box-shadow: 0 0 0 0.125em @lumina_bg, 
                 0 0 0 0.25em @lumina_outline;
     transition: box-shadow 150ms ease-in-out;
 }
 
-/* --- ACCIÓN SUGERIDA (Estilo Material You) --- */
 button.suggested-action {
     background-color: @lumina_primary;
     color: @lumina_on_primary;
@@ -39,12 +33,10 @@ button.suggested-action {
 
 button.suggested-action:hover {
     background-color: shade(@lumina_primary, 1.1);
-    /* Sombra dinámica */
     box-shadow: 0 0.25em 0.5em alpha(@lumina_primary, 0.3);
     transform: translateY(-0.125em);
 }
 
-/* --- BOTÓN DE PELIGRO --- */
 button.destructive-action {
     color: @lumina_error;
     background-color: transparent;
@@ -56,12 +48,10 @@ button.destructive-action:hover {
     border-color: @lumina_error;
 }
 
-/* --- ESTADOS FÍSICOS --- */
 button:active {
-    /* El botón se "hunde" físicamente al presionar */
     transform: translateY(0) scale(0.97);
     box-shadow: none;
-    transition: all 50ms; /* Respuesta instantánea */
+    transition: all 50ms;
 }
 
 button:disabled {
@@ -73,9 +63,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* ============================================================
-   HEADERBAR – BOTONES COMPACTOS (GTK 3 FIX)
-   ============================================================ */
 
 headerbar button {
     padding: 0.25em;
@@ -91,27 +78,23 @@ headerbar button {
     transform: none;
 }
 
-/* Hover sutil en headerbar */
 headerbar button:hover {
     background-color: alpha(@lumina_primary, 0.12);
     box-shadow: none;
     transform: none;
 }
 
-/* Estado activo */
 headerbar button:active {
     background-color: alpha(@lumina_primary, 0.2);
     transform: none;
 }
 
-/* Botones de ventana (X, _ , □) */
 headerbar button.titlebutton {
     padding: 0.25em;
     min-width: 1.75em;
     min-height: 1.75em;
 }
 
-/* Desactivar sombras físicas en headerbar */
 headerbar button,
 headerbar button:hover,
 headerbar button:active {
