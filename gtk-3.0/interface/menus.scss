@@ -1,76 +1,52 @@
-/* ============================================================
-   LUMINA – MENUS & POPOVERS CORE (GTK 3.x)
-   ============================================================ */
 
-/* --- CONTENEDOR PRINCIPAL --- */
 menu,
 menu:backdrop,
 .popover,
 .popover:backdrop {
     background-color: @lumina_card;
     background-image: none;
-
-    border-radius: 0.75em; /* 12px */
+    border-radius: 0.75em;
     border: 0.0625em solid @lumina_outline;
-
-    padding: 0; /* ✅ GTK-safe */
-
+    padding: 0;
     box-shadow: 0 0.625em 2.5em alpha(black, 0.12);
 }
 
-/* Caja interna real (GTK la usa para layout) */
 menu > box,
 .popover > box {
     background-color: @lumina_card;
     background-image: none;
-
     padding: 0.5em 0;
 }
 
-/* Quitar flecha del popover (estética limpia) */
 .popover > arrow {
     background: none;
     border: none;
 }
 
-/* ============================================================
-   ELEMENTOS DEL MENÚ
-   ============================================================ */
-
 menuitem {
     padding: 0.5em 1em;
     margin: 0 0.375em;
-
     border-radius: 0.375em;
     color: @lumina_text;
-
     background-color: transparent;
 
     transition: background-color 200ms ease, color 200ms ease;
 }
 
-/* Hover / Selección real */
 menuitem:hover,
 menuitem:selected {
     background-color: alpha(@lumina_primary, 0.1);
     color: @lumina_primary;
 }
 
-/* Activo */
 menuitem:active {
     background-color: alpha(@lumina_primary, 0.2);
 }
 
-/* ============================================================
-   SEPARADORES
-   ============================================================ */
-
 menu separator {
     background-color: @lumina_outline;
-
     margin: 0.375em 0.25em;
     min-height: 0.0625em;
-
     opacity: 0.2;
 }
 
