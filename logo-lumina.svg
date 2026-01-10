@@ -1,35 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Lumina Logo">
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
 
-    <!-- Fondo -->
-    <rect width="256" height="256" rx="48" fill="#FDF8FF"></rect>
+  <!-- Fondo transparente para usar sobre cualquier fondo -->
+  <rect width="300" height="300" fill="none"></rect>
 
-    <!-- Anillo -->
-    <circle cx="128" cy="128" r="78" fill="none" stroke="#EADDFF" stroke-width="12"></circle>
+  <!-- Círculo base con gradiente radial -->
+  <defs>
+    <radialGradient id="circleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0C8FF"></stop>
+      <stop offset="100%" stop-color="#4F378B"></stop>
+    </radialGradient>
 
-    <!-- Halo suave -->
-    <circle cx="128" cy="128" r="78" fill="none" stroke="rgba(103,80,164,0.25)" stroke-width="4"></circle>
+    <!-- Degradado para el texto -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D0BCFF"></stop>
+      <stop offset="50%" stop-color="#4F378B"></stop>
+      <stop offset="100%" stop-color="#D0BCFF"></stop>
+    </linearGradient>
+  </defs>
 
-    <!-- Estrella / Luz central -->
-    <path d="
-        M128 72
-        L144 112
-        L184 128
-        L144 144
-        L128 184
-        L112 144
-        L72 128
-        L112 112
-        Z" fill="#6750A4"></path>
+  <!-- Círculo del logo -->
+  <circle cx="150" cy="150" r="100" fill="url(#circleGrad)"></circle>
 
-    <!-- Brillo interior -->
-    <path d="
-        M128 92
-        L138 118
-        L164 128
-        L138 138
-        L128 164
-        L118 138
-        L92 128
-        L118 118
-        Z" fill="#FFFFFF" opacity="0.85"></path>
+  <!-- Halo sutil alrededor del círculo -->
+  <circle cx="150" cy="150" r="120" fill="none" stroke="#4F378B" stroke-width="8" opacity="0.2">
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"></animate>
+  </circle>
+
+  <!-- Destellos alrededor -->
+  <circle cx="90" cy="90" r="4" fill="#D0BCFF" opacity="0.3">
+    <animate attributeName="opacity" values="0.1;1;0.1" dur="2s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="210" cy="70" r="3" fill="#E0C8FF" opacity="0.2">
+    <animate attributeName="opacity" values="0.1;0.8;0.1" dur="1.8s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="180" cy="220" r="3.5" fill="#D0BCFF" opacity="0.25">
+    <animate attributeName="opacity" values="0.1;1;0.1" dur="2.2s" repeatCount="indefinite"></animate>
+  </circle>
+
+  <!-- Estrella fugaz -->
+  <g fill="#E0C8FF" opacity="0">
+    <polygon points="0,-6 6,0 0,6 -6,0"></polygon>
+    <line x1="0" y1="0" x2="0" y2="0" stroke="#E0C8FF" stroke-width="4" stroke-linecap="round"></line>
+    <animateTransform attributeName="transform" type="translate" values="150,150;280,50" dur="2s" repeatCount="indefinite" begin="0s;3s;6s"></animateTransform>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="0s;3s;6s"></animate>
+    <animate attributeName="x2" values="0;130" dur="2s" repeatCount="indefinite" begin="0s;3s;6s"></animate>
+    <animate attributeName="y2" values="0;-100" dur="2s" repeatCount="indefinite" begin="0s;3s;6s"></animate>
+  </g>
+
+  <!-- Texto "Lumina" integrado dentro o abajo del logo -->
+  <text x="150" y="290" font-family="Inter, sans-serif" font-size="40" font-weight="700" fill="url(#textGrad)" text-anchor="middle">
+    Lumina
+  </text>
+
 </svg>
