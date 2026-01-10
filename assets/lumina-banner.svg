@@ -1,67 +1,93 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1200 360"
-  width="1200"
-  height="360"
-  role="img"
-  aria-label="Lumina UI banner">
+<svg width="960" height="200" viewBox="0 0 960 200" xmlns="http://www.w3.org/2000/svg">
 
-  <rect width="1200" height="360" rx="28" fill="#FDF8FF"/>
+  <!-- Fondo oscuro -->
+  <rect width="960" height="200" fill="#1C1B1F" rx="12"></rect>
 
-  <circle cx="260" cy="180" r="160" fill="#EADDFF"/>
+  <!-- Estrellas de fondo aleatorias -->
+  <g>
+    <circle cx="60" cy="50" r="2" fill="#D0BCFF">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle cx="180" cy="120" r="1.5" fill="#4F378B">
+      <animate attributeName="opacity" values="0.1;1;0.1" dur="1.5s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle cx="320" cy="30" r="2.5" fill="#D0BCFF">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle cx="500" cy="150" r="1.8" fill="#4F378B">
+      <animate attributeName="opacity" values="0.1;0.8;0.1" dur="1.8s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle cx="700" cy="70" r="2" fill="#D0BCFF">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle cx="850" cy="140" r="1.5" fill="#4F378B">
+      <animate attributeName="opacity" values="0.1;1;0.1" dur="1.7s" repeatCount="indefinite"></animate>
+    </circle>
+  </g>
 
-  <circle
-    cx="260"
-    cy="180"
-    r="120"
-    fill="none"
-    stroke="rgba(103,80,164,0.25)"
-    stroke-width="10"/>
+  <!-- Constelaciones -->
+  <line x1="180" y1="120" x2="320" y2="30" stroke="#4F378B" stroke-width="0.8" opacity="0.3"></line>
+  <line x1="320" y1="30" x2="500" y2="150" stroke="#4F378B" stroke-width="0.8" opacity="0.3"></line>
+  <line x1="700" y1="70" x2="850" y2="140" stroke="#D0BCFF" stroke-width="0.8" opacity="0.3"></line>
 
-  <path
-    d="
-      M260 108
-      L286 164
-      L342 180
-      L286 196
-      L260 252
-      L234 196
-      L178 180
-      L234 164
-      Z"
-    fill="#6750A4"/>
+  <!-- Logo circular con gradiente y halo -->
+  <defs>
+    <radialGradient id="logoGradAdv" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0C8FF"></stop>
+      <stop offset="100%" stop-color="#4F378B"></stop>
+    </radialGradient>
+  </defs>
+  <circle cx="80" cy="100" r="50" fill="url(#logoGradAdv)"></circle>
+  <circle cx="80" cy="100" r="60" fill="none" stroke="#4F378B" stroke-width="8" opacity="0.2">
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"></animate>
+  </circle>
 
-  <path
-    d="
-      M260 132
-      L276 170
-      L314 180
-      L276 190
-      L260 228
-      L244 190
-      L206 180
-      L244 170
-      Z"
-    fill="#FFFFFF"
-    opacity="0.9"/>
+  <!-- Múltiples estrellas fugaces aleatorias -->
+  <g>
+    <g fill="#E0C8FF" opacity="0">
+      <polygon points="0,-6 6,0 0,6 -6,0"></polygon>
+      <line x1="0" y1="0" x2="0" y2="0" stroke="#E0C8FF" stroke-width="4" stroke-linecap="round"></line>
+      <animateTransform attributeName="transform" type="translate" values="80,100;880,30" dur="2s" repeatCount="indefinite" begin="0s;5s;10s"></animateTransform>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="0s;5s;10s"></animate>
+      <animate attributeName="x2" values="0;800" dur="2s" repeatCount="indefinite" begin="0s;5s;10s"></animate>
+      <animate attributeName="y2" values="0;-90" dur="2s" repeatCount="indefinite" begin="0s;5s;10s"></animate>
+    </g>
 
-  <text
-    x="520"
-    y="170"
-    font-size="72"
-    font-weight="700"
-    font-family="Inter, Cantarell, Segoe UI, sans-serif"
-    fill="#6750A4">
+    <g fill="#E0C8FF" opacity="0">
+      <polygon points="0,-5 5,0 0,5 -5,0"></polygon>
+      <line x1="0" y1="0" x2="0" y2="0" stroke="#D0BCFF" stroke-width="3" stroke-linecap="round"></line>
+      <animateTransform attributeName="transform" type="translate" values="100,120;900,50" dur="3s" repeatCount="indefinite" begin="1s;6s;11s"></animateTransform>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" begin="1s;6s;11s"></animate>
+      <animate attributeName="x2" values="0;800" dur="3s" repeatCount="indefinite" begin="1s;6s;11s"></animate>
+      <animate attributeName="y2" values="0;-70" dur="3s" repeatCount="indefinite" begin="1s;6s;11s"></animate>
+    </g>
+
+    <g fill="#E0C8FF" opacity="0">
+      <polygon points="0,-4 4,0 0,4 -4,0"></polygon>
+      <line x1="0" y1="0" x2="0" y2="0" stroke="#4F378B" stroke-width="2" stroke-linecap="round"></line>
+      <animateTransform attributeName="transform" type="translate" values="60,80;950,20" dur="2.5s" repeatCount="indefinite" begin="2s;7s;12s"></animateTransform>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="2s;7s;12s"></animate>
+      <animate attributeName="x2" values="0;890" dur="2.5s" repeatCount="indefinite" begin="2s;7s;12s"></animate>
+      <animate attributeName="y2" values="0;-100" dur="2.5s" repeatCount="indefinite" begin="2s;7s;12s"></animate>
+    </g>
+  </g>
+
+  <!-- Texto Lumina con degradado animado -->
+  <defs>
+    <linearGradient id="textGradAdv" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D0BCFF">
+        <animate attributeName="stop-color" values="#D0BCFF;#4F378B;#D0BCFF" dur="3s" repeatCount="indefinite"></animate>
+      </stop>
+      <stop offset="50%" stop-color="#4F378B">
+        <animate attributeName="stop-color" values="#4F378B;#D0BCFF;#4F378B" dur="3s" repeatCount="indefinite"></animate>
+      </stop>
+      <stop offset="100%" stop-color="#D0BCFF">
+        <animate attributeName="stop-color" values="#D0BCFF;#4F378B;#D0BCFF" dur="3s" repeatCount="indefinite"></animate>
+      </stop>
+    </linearGradient>
+  </defs>
+  <text x="180" y="115" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="url(#textGradAdv)">
     Lumina
   </text>
 
-  <text
-    x="520"
-    y="220"
-    font-size="26"
-    font-weight="400"
-    font-family="Inter, Cantarell, Segoe UI, sans-serif"
-    fill="#49454F">
-    UI vision for GNU/Linux
-  </text>
 </svg>
