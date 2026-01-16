@@ -1,26 +1,61 @@
-@import url("main.css");
-@import url("application/filemanager.scss");
-@import url("application/players.scss");
-@import url("application/editors.scss");
-@import url("application/gnome.scss");
-@import url("interface/buttons.scss");
-@import url("interface/levelbar.scss");
-@import url("interface/headerbar.scss");
-@import url("interface/entry.scss");
-@import url("interface/menus.scss");
-@import url("interface/tabs.scss");
-@import url("interface/slider.scss");
-@import url("interface/switch.scss");
-@import url("interface/popvers.scss");
-@import url("interface/progressbar.scss");
-@import url("interface/checkbox.scss");
 @import url("mode/light.scss");
-@import url("widgets.css");
+@import url("gtk.css");
 
-/* Reset global para Lumina */
-* {
-    -GtkLabel-allow-focus: false;
-    -GtkWidget-focus-padding: 2;
-    -GtkWidget-focus-line-width: 2;
-    outline-radius: 12px;
+@define-color lumina_surface #1e1e1e;
+@define-color lumina_card #252525;
+@define-color lumina_text #e6e6e6;
+
+
+textview,
+sourceview {
+    box-shadow:
+        0 0.0625em 0.125em rgba(0,0,0,0.35),
+        0 0.75em 1.5em rgba(0,0,0,0.45);
 }
+
+textview text selection,
+sourceview text selection {
+    background-color: alpha(@lumina_primary, 0.18);
+}
+
+.sourceview gutter {
+    background-color: alpha(@lumina_surface, 0.95);
+    border-right-color: alpha(@lumina_outline, 0.8);
+}
+
+headerbar {
+    background-color: @lumina_surface;
+    color: @lumina_text;
+
+    border-bottom: 0.0625em solid alpha(@lumina_outline, 0.6);
+
+    box-shadow:
+        0 0.125em 0.375em alpha(black, 0.35);
+
+    padding: 0.25em 0.5em;
+}
+
+headerbar:backdrop {
+    background-color: alpha(@lumina_surface, 0.88);
+    color: @lumina_text_secondary;
+
+    box-shadow:
+        0 0.0625em 0.25em alpha(black, 0.2);
+}
+
+headerbar,
+.header-bar,
+.titlebar {
+    background-color: @lumina_surface;
+}
+
+headerbar button {
+    background-color: alpha(@lumina_primary, 0.12);
+    color: @lumina_text;
+    border-radius: 0.5em;
+}
+
+headerbar button:hover {
+    background-color: alpha(@lumina_primary, 0.22);
+}
+
