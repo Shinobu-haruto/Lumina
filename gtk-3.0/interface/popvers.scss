@@ -5,24 +5,24 @@
 
 /* --- CONTENEDOR EXTERNO (SHELL) --- */
 popover {
-    background: none;        /* 🔧 GTK ignora esto, se limpia */
-    border: none;
+    background-color: @lumina_bg;
     box-shadow: none;
     margin: 0.25em;
+    border: 0.0625em solid @lumina_outline;
 }
 
 /* --- CAJA REAL DEL POPOVER (CRÍTICO) --- */
-popover > box {
-    background-color: @lumina_bg;
+popover,
+popover > frame,
+popover > box,
+popover > frame > box { {
+    background-color: @lumina_card;
     background-image: none;
 
     border-radius: 0.375em;          /* 6px */
     border: 0.0625em solid @lumina_outline;
-
     padding: 0.375em;
-
-    /* Sombra Swiss sólida */
-    box-shadow: 0.25em 0.25em 0 alpha(black, 0.05);
+    box-shadow: 0.0625em 0.0625em 0 alpha(@lumina_primary, 0.08);
 }
 
 /* Backdrop (sin foco) */
@@ -32,7 +32,7 @@ popover:backdrop > box {
 
 /* --- FLECHA DEL POPOVER --- */
 popover arrow {
-    background-color: @lumina_bg;
+    background-color: @lumina_card;
     border: 0.0625em solid @lumina_outline;
 }
 
@@ -76,3 +76,47 @@ popover separator {
     opacity: 0.2;
 }
 
+popover modelbutton {
+    min-height: 2.2em;
+    padding: 0.45em 0.75em;
+    margin: 0.125em;
+
+    border-radius: 0.4em;
+    background: transparent;
+    border: none;
+
+    color: @lumina_text;
+    font-weight: 500;
+
+    box-shadow: none;
+}
+
+/* Hover */
+popover modelbutton:hover {
+    background-color: alpha(@lumina_primary, 0.10);
+}
+
+/* Active / pressed */
+popover modelbutton:active {
+    background-color: alpha(@lumina_primary, 0.18);
+}
+
+/* Focus (teclado) */
+popover modelbutton:focus {
+    outline: none;
+    background-color: alpha(@lumina_primary, 0.22);
+    color: @lumina_on_primary;
+}
+
+/* Disabled */
+popover modelbutton:disabled {
+    color: alpha(@lumina_text_secondary, 0.6);
+    background: transparent;
+}
+
+/* Separador interno */
+popover modelbutton separator {
+    min-height: 1px;
+    margin: 0.25em 0;
+    background-color: @lumina_outline;
+}

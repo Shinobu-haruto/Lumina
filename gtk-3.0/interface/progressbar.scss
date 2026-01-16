@@ -1,31 +1,26 @@
 progressbar trough {
     background-color: @lumina_surface; /* Fondo de la barra */
-    border-radius: 10px;
+    border-radius: 0.625em;
     border: none;
-    min-height: 8px; /* Un poco más gruesa para ser moderna */
+    min-height: 0.5em;
+    padding: 0;
 }
 
-progressbar progress {
+progressbar progress,
+progressbar though > progress {
     background-color: @lumina_primary; 
-    background-image: linear-grandient( 90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+    background-image: linear-gradient( 90deg, transparent 0%, alpha(white, 0.18) 50%, transparent 100%);
     border-radius: 10px;
     border: none;
-    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 200ms ease;
 }
 
-levelbar {
-    min-height: 8px;
-    border-radius: 4px; 
-}
-
-levelbar trough {
-    background-color: alpha(@lumina_bg, 0.6);
-    border-radius: 4px;
-}
-
-levelbar block {
-    border-radius: 3px; /* Un punto menos que el contenedor para encaje perfecto */
-}
+progressbar:backdrop progress {
+ opacity: 0.6;
+ }
+ progressbar:disable progress {
+   opacity: 0.4;
+   }
 
 /* --- ANIMACIÓN DE ACTIVIDAD --- */
 @keyframes lumina_progress_pulse {
@@ -33,16 +28,15 @@ levelbar block {
     to { background-position: -200% 0; }
 }
 
-/* Estado de carga indeterminada (cuando no se sabe el % ) */
-progressbar.indeterminated progress {
-    animation: lumina_indeterminated 1.5s infinite ease-in-out;
+progressbar:indeterminate progress {
+    background-image: linear-gradient(100deg, alpha(@lumina_primary, 0.6) 0%, alpha(white, 0.35) 45%, alpha(@lumina_primary, 0.6) 90%);
+    background-size: 300% 100%;
+    background-position: 0% 0%;
+    animation: lumina_indeterminate 2.8s ease-in-out infinite;
     width: 40%; /* Tamaño del bloque que rebota */
 }
-
-
-@keyframes lumina_indeterminated {
-    0% { margin-left: -40%; }
-    50% { margin-left: 100%; }
-    100% { margin-left: -40%; }
-    
-    
+@keyframes lumina_luminous_drift {
+ 0% {background-position: 0% 0%; }
+ 50% {background-position: 100% 0%;}
+ 100% {background-position: 0% 0%;}
+ }
