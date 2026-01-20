@@ -1,7 +1,7 @@
 
 stage {
-    font-family: sans-serif;
-    font-size: 10pt;
+    font-family: "sans-serif", Noto Sans;
+    font-size: 1em;
     color: #2E3440;
 }
 
