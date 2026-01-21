@@ -1,3 +1,9 @@
+## Build 2501 - 2026-01-21
+  -  Added support for older GTK versions.
+  - Added support for XFCE.
+
+    feat: add GTK legacy & XFCE support; spinner still experimental
+=======================================================================
 ## Build 2406 — 2026-01-15
 
 ### Added
