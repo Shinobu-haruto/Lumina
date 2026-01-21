@@ -3,7 +3,8 @@
   - Added support for XFCE.
 
     feat: add GTK legacy & XFCE support; spinner still experimental
-=======================================================================
+
+
 ## Build 2406 — 2026-01-15
 
 ### Added
