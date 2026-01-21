@@ -1,0 +1,286 @@
+/* ============================================================
+   LUMINA – FILE MANAGERS CORE
+   Nemo / Nautilus / Caja (GTK 3.x)
+   Escala base: em
+   ============================================================ */
+
+/* ============================================================
+   VENTANA PRINCIPAL
+   ============================================================ */
+
+.file-manager,
+.nautilus-window,
+.nemo-window,
+.caja-window {
+    background-color: @lumina_bg;
+    color: @lumina_text;
+    border-radius: 0.65em;
+    border-bottom: 0.0625em solid @lumina_outline;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* ============================================================
+   TOOLBAR / HEADERBAR DEL GESTOR
+   ============================================================ */
+
+toolbar,
+.header-bar {
+    background-color: @lumina_bg;
+    border-bottom: 0.0625em solid @lumina_outline;
+    padding: 0.25em;
+}
+
+toolbar button,
+.header-bar button {
+    border-radius: 0.375em;
+    padding: 0.375em 0.625em;
+}
+
+/* ============================================================
+   ÁREA DE CONTENIDO
+   ============================================================ */
+
+.view,
+.view:selected,
+.view:hover {
+    background-color: transparent;
+}
+
+/* Separadores */
+separator {
+    background-color: @lumina_outline;
+    min-width: 0.0625em;
+    min-height: 0.0625em;
+}
+
+/* ============================================================
+   SIDEBAR (LUGARES / DISPOSITIVOS)
+   ============================================================ */
+
+.sidebar,
+.sidebar-view,
+placessidebar {
+    background-color: @lumina_surface;
+    border-right: 0.0625em solid @lumina_outline;
+    padding: 0.25em;
+}
+
+/* Filas */
+.sidebar row,
+placessidebar row {
+    border-radius: 0.375em;
+    padding: 0.375em 0.5em;
+    margin: 0.125em 0;
+    color: @lumina_text_secondary;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+/* Hover */
+.sidebar row:hover,
+placessidebar row:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+    color: @lumina_primary;
+}
+
+/* Seleccionado */
+.sidebar row:selected,
+placessidebar row:selected {
+    background-color: alpha(@lumina_primary, 0.15);
+    color: @lumina_primary;
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* ============================================================
+   LIST VIEW (LISTA DE ARCHIVOS)
+   ============================================================ */
+
+treeview {
+    background-color: @lumina_bg;
+    border: none;
+}
+
+treeview header button {
+    background-color: @lumina_surface;
+    border: none;
+    color: @lumina_text_secondary;
+    padding: 0.375em;
+}
+
+treeview header button:hover {
+    background-color: alpha(@lumina_primary, 0.06);
+    color: @lumina_primary;
+}
+
+/* Filas */
+treeview row {
+    min-height: 2.25em;
+    transition: background-color 120ms ease;
+}
+
+/* Hover */
+treeview row:hover {
+    background-color: alpha(@lumina_primary, 0.06);
+}
+
+/* Selección */
+treeview row:selected {
+    background-color: alpha(@lumina_primary, 0.18);
+    color: @lumina_primary;
+}
+
+/* Texto */
+treeview cell {
+    padding: 0.375em 0.5em;
+    color: @lumina_text;
+}
+
+/* ============================================================
+   ICON VIEW (VISTA DE ICONOS)
+   ============================================================ */
+
+.icon-view {
+    background-color: transparent;
+}
+
+.icon-view .cell {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    transition: background-color 150ms ease, transform 120ms ease;
+}
+
+/* Hover */
+.icon-view .cell:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+    transform: translateY(-0.0625em);
+}
+
+/* Seleccionado */
+.icon-view .cell:selected {
+    background-color: alpha(@lumina_primary, 0.18);
+    color: @lumina_primary;
+}
+
+/* ============================================================
+   PATH BAR / BREADCRUMBS
+   ============================================================ */
+
+.path-bar {
+    padding: 0.125em;
+}
+
+.path-bar button {
+    border-radius: 0.375em;
+    padding: 0.25em 0.5em;
+    background-color: transparent;
+    color: @lumina_text_secondary;
+}
+
+.path-bar button:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+    color: @lumina_primary;
+}
+
+.path-bar button:checked {
+    background-color: alpha(@lumina_primary, 0.15);
+    color: @lumina_primary;
+}
+
+/* ============================================================
+   BÚSQUEDA
+   ============================================================ */
+
+.search-entry {
+    border-radius: 0.375em;
+    padding: 0.375em 0.5em;
+    background-color: @lumina_surface;
+    border: 0.0625em solid @lumina_outline;
+}
+
+.search-entry:focus {
+    border-color: @lumina_primary;
+}
+
+/* ============================================================
+   SCROLLBARS (SUAVES Y MINIMAL)
+   ============================================================ */
+
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    border-radius: 0.5em;
+    background-color: alpha(@lumina_text, 0.25);
+}
+
+scrollbar slider:hover {
+    background-color: alpha(@lumina_primary, 0.45);
+}
+
+/* ============================================================
+   BARRA DE ESTADO
+   ============================================================ */
+
+statusbar {
+    background-color: @lumina_surface;
+    border-top: 0.0625em solid @lumina_outline;
+    padding: 0.25em 0.5em;
+    color: @lumina_text_secondary;
+}
+
+/* ============================================================
+   BACKDROP (SIN FOCO)
+   ============================================================ */
+
+.nautilus-window:backdrop,
+.nemo-window:backdrop,
+.caja-window:backdrop {
+    background-color: shade(@lumina_bg, 0.98);
+    color: @lumina_text_secondary;
+}
+
+.sidebar row:selected:backdrop,
+placessidebar row:selected:backdrop {
+    background-color: alpha(@lumina_primary, 0.08);
+    box-shadow: inset 0.1875em 0 0 @lumina_text_secondary;
+}
+
+/* --- NEMO TITLEBUTTON FIX --- */
+.nemo-window headerbar.titlebar button.titlebutton,
+.nemo-window .titlebar button.titlebutton {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+/* Forzar los círculos de Lumina en Nemo */
+.nemo-window button.titlebutton.close {
+    background-color: @button_close; /* Definido en tu XML */
+    border-radius: 100%;
+}
+
+.nemo-window button.titlebutton.minimize {
+    background-color: @button_minimize;
+    border-radius: 100%;
+}
+
+.nemo-window button.titlebutton.maximize {
+    background-color: @button_maximize;
+    border-radius: 100%;
+}
+
+/* --- ESPECIFICIDAD PARA NEMO --- */
+.nemo-window {
+    background-color: @lumina_bg; /* #1C1B1F */
+}
+
+/* Forzar el fondo en el contenedor de archivos */
+.nemo-window .view, 
+.nemo-window canvas,
+.nemo-window iconview {
+    background-color: @lumina_bg;
+    color: @lumina_text;
+}

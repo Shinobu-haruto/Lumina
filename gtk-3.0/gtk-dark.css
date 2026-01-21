@@ -1,10 +1,5 @@
-@import url("mode/light.scss");
+@import url("mode/dark_palette.scss"); /* Modo Oscuro como Windows */
 @import url("gtk.css");
-
-@define-color lumina_surface #1e1e1e;
-@define-color lumina_card #252525;
-@define-color lumina_text #e6e6e6;
-
 
 textview,
 sourceview {

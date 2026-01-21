@@ -1,0 +1,421 @@
+ 
+window,
+window:backdrop {
+    outline: none;
+    background-color: @lumina_bg;
+    background-image: none;
+    color: @lumina_text;
+    border: none;
+}
+
+/* ============================================================
+   DECORACIÓN CSD BASE
+   ============================================================ */
+
+window.csd,
+window.csd:backdrop {
+    background-color: @lumina_bg;
+    background-image: none;
+    outline: none;
+    border: 0.0625em solid @lumina_outline;
+    margin: 0;
+}
+
+/* Aire interno sin afectar tamaño real */
+window.csd > decoration {
+    padding: 0.5em;
+}
+
+/* ============================================================
+   CSD CON FOCO
+   ============================================================ */
+
+window.csd:not(.maximized):not(.fullscreen) {
+    box-shadow:
+        0 0 0 0.0625em @lumina_outline,
+        0 0.1875em 0 0 alpha(@lumina_primary, 0.75),
+        0 0.5em 1.25em alpha(black, 0.18);
+}
+
+/* ============================================================
+   CSD SIN FOCO
+   ============================================================ */
+
+window.csd:backdrop:not(.maximized):not(.fullscreen) {
+    box-shadow:
+        0 0 0 0.0625em @lumina_outline,
+        0 0.125em 0 0 alpha(@lumina_text_secondary, 0.8),
+        0 0.375em 0.75em alpha(black, 0.1);
+}
+
+/* ============================================================
+   MAXIMIZADA / FULLSCREEN
+   ============================================================ */
+
+window.maximized,
+window.fullscreen {
+    background-color: @lumina_bg;
+    background-image: none;
+
+    border: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* ============================================================
+   MARCOS Y CONTENEDORES
+   ============================================================ */
+
+frame > box,
+frame > viewport,
+frame > widget,
+.frame > box,
+.frame > viewport,
+.frame > widget {    
+    border: 0.0625em solid @lumina_outline;
+    border-radius: 0.25em;
+    padding: 0.0625em;
+    background-color: @lumina_card;
+}
+
+frame > label {
+    font-weight: 700;
+    font-size: 0.9em;
+    color: @lumina_text;
+    background-color: transparent;
+    padding: 0.25em 0.5em;
+    }
+
+/* ============================================================
+   SELECCIÓN Y SEPARADORES
+   ============================================================ */
+
+.rubberband,
+rubberband {
+    background-color: alpha(@lumina_primary, 0.18);
+    border: 0.0625em solid alpha(@lumina_primary, 0.6);
+    border-radius: 0.125em;
+}
+
+separator {
+    background-color: @lumina_outline;
+    min-height: 0.0625em;
+    min-width: 0.0625em;
+    margin: 0.25em 0;
+}
+
+separator.vertical {
+    margin: 0 0.25em;
+}
+
+/* ============================================================
+   LISTAS Y FILAS
+   ============================================================ */
+
+list {
+    background-color: @lumina_card;
+    border: 0.0625em solid @lumina_outline;
+    border-radius: 0.375em;
+}
+
+row {
+    transition: background-color 150ms ease;
+}
+
+row:selected {
+    background-color: alpha(@lumina_primary, 0.15);
+    color: @lumina_primary;
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL Y VISTAS
+   ============================================================ */
+
+.content,
+.content-area,
+.view,
+stack,
+stack > box {
+    background-color: transparent;
+    color: @lumina_text;
+}
+
+/* Evita fondos fantasma en apps GNOME */
+stack > widget {
+    background-color: transparent;
+}
+
+/* ============================================================
+   SCROLLED WINDOWS
+   ============================================================ */
+
+scrolledwindow {
+    background-color: transparent;
+    border: none;
+}
+
+scrolledwindow > viewport {
+    background-color: transparent;
+}
+
+/* ============================================================
+   HEADERBAR – PRESENCIA CORE (NO ESTILO)
+   ============================================================ */
+
+headerbar {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+window.csd > headerbar {
+    margin: 0;
+}
+
+window:backdrop headerbar {
+    opacity: 0.95;
+}
+
+/* ============================================================
+   OVERLAYS Y CAPAS SUPERIORES
+   ============================================================ */
+
+overlay {
+    background-color: transparent;
+}
+
+overlay > revealer,
+overlay > widget {
+    background-color: transparent;
+}
+
+/* ============================================================
+   ÁREAS DE ACCIÓN
+   ============================================================ */
+
+.action-bar,
+.toolbar,
+toolbar {
+    background-color: transparent;
+    border: none;
+}
+
+/* ============================================================
+   BACKDROP GLOBAL
+   ============================================================ */
+
+window:backdrop {
+    color: @lumina_text_secondary;
+}
+
+/* ============================================================
+   PREVENCIÓN DE ESTIRAMIENTO VISUAL
+   ============================================================ */
+
+window > box,
+window > stack {
+    padding: 0;
+    margin: 0;
+}
+
+/* ============================================================
+   GTK DIALOGS CORE
+   ============================================================ */
+
+dialog,
+dialog:backdrop {
+    background-color: @lumina_bg;
+    background-image: none;
+    color: @lumina_text;
+
+    border-radius: 0.375em;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* Contenedor interno real */
+dialog > box {
+    background-color: transparent;
+    padding: 1em;
+}
+
+/* ============================================================
+   HEADERBAR EN DIÁLOGOS
+   ============================================================ */
+
+dialog headerbar {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0.5em 0.75em;
+}
+
+dialog headerbar.titlebar {
+    margin: 0;
+}
+
+/* ============================================================
+   CUERPO DEL DIÁLOGO
+   ============================================================ */
+
+dialog .content-area {
+    padding: 0.75em 0;
+}
+
+dialog label {
+    color: @lumina_text;
+}
+
+/* ============================================================
+   ÁREA DE ACCIONES (BOTONES)
+   ============================================================ */
+
+dialog .action-area {
+    padding-top: 0.75em;
+    spacing: 0.5em;
+}
+
+dialog .action-area::before {
+    content: "";
+    display: block;
+    min-height: 0.0625em;
+    background-color: @lumina_outline;
+    opacity: 0.2;
+    margin-bottom: 0.75em;
+}
+
+/* ============================================================
+   BACKDROP (DIÁLOGO SIN FOCO)
+   ============================================================ */
+
+dialog:backdrop {
+    color: @lumina_text_secondary;
+    opacity: 0.96;
+}
+
+/* ============================================================
+   DIÁLOGOS MODALES
+   ============================================================ */
+
+window.modal dialog {
+    box-shadow:
+        0 0 0 0.0625em @lumina_outline,
+        0 0.75em 2em alpha(black, 0.25);
+}
+
+.background,
+.background > box,
+.background > stack,
+.background > viewport,
+.background > widget {
+    background-color: @lumina_bg;
+    color: @lumina_text;
+}
+
+.view,
+.view > viewport {
+    background-color: @lumina_card;
+    color: @lumina_text;
+}
+
+viewport {
+    background-color: transparent;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    box-shadow: inset 0 0 0 0.125em alpha(@lumina_primary, 0.35);
+}
+
+tooltip {
+    background-color: @lumina_card;
+    color: @lumina_text;
+
+    border-radius: 0.375em;
+    border: 0.0625em solid @lumina_outline;
+
+    box-shadow:
+        0 4px 12px @lumina_shadow_sm;
+}
+
+tooltip label {
+    padding: 0.375em 0.5em;
+}
+
+spinner {
+    min-width: 1.5em;
+    min-height: 1.5em;
+    background-color:transparent;
+}
+
+spinner image {
+    animation: lumina-spin 1s linear infinite;
+    opacity: 0.85;
+}
+spinner:checked {
+    background-image: none;
+    border-radius: 50%;
+
+    border: 0.1875em solid alpha(@lumina_primary, 0.25);
+    border-top-color: @lumina_primary;
+
+     animation:
+        lumina-spin 1s linear infinite,
+        lumina-breathe 1.8s ease-in-out infinite,
+        lumina-tail 1.8s ease-in-out infinite;
+}
+
+button spinner,
+headerbar spinner {
+    min-width: 1em;
+    min-height: 1em;
+    border-width: 0.125em;
+}
+
+spinner:backdrop:checked {
+    opacity: 0.5;
+    animation: lumina-spin 1.4s linear infinite;
+}
+
+spinner:disabled {
+    opacity: 0.3;
+    animation: none;
+}
+
+@keyframes lumina-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes lumina-breathe {
+    0%   { opacity: 0.6; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes lumina-tail {
+    0%   { box-shadow: 0 0 0 0 alpha(@lumina_primary, 0.0); }
+    50%  { box-shadow: 0 0 0.375em 0 alpha(@lumina_primary, 0.45); }
+    100% { box-shadow: 0 0 0 0 alpha(@lumina_primary, 0.0); }
+}
+
+progressbar.spinner {
+    min-height: 0.25em;
+    border-radius: 999px;
+}
+
+progressbar.spinner progress {
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        @lumina_primary,
+        transparent
+    );
+
+    background-size: 200% 100%;
+    animation: lumina-flow 1.2s linear infinite;
+}
+

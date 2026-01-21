@@ -1,0 +1,278 @@
+.media-player,
+.player,
+.video-player {
+    background-color: transparent;
+    color: @lumina_text;
+}
+
+/* ============================================================
+   BARRA DE PROGRESO / SEEK BAR
+   ============================================================ */
+
+.player scale.horizontal,
+.media-player scale.horizontal,
+.video-player scale.horizontal {
+    padding: 0.25em 0;
+}
+
+scale.horizontal trough {
+    background-color: alpha(@lumina_outline, 0.25);
+    border-radius: 999px;
+    min-height: 0.375em; /* 6px */
+}
+
+scale.horizontal highlight {
+    background-color: @lumina_primary;
+    border-radius: 999px;
+}
+
+scale.horizontal slider {
+    background-color: @lumina_primary;
+    border-radius: 999px;
+    min-width: 0.75em;
+    min-height: 0.75em;
+
+    box-shadow:
+        0 0 0 0.125em alpha(@lumina_primary, 0.25);
+
+    transition: box-shadow 120ms ease,
+                transform 120ms ease;
+}
+
+/* Hover tipo Material */
+scale.horizontal slider:hover {
+    box-shadow:
+        0 0 0 0.1875em alpha(@lumina_primary, 0.35);
+}
+
+/* Click físico */
+scale.horizontal slider:active {
+    transform: scale(0.9);
+}
+
+/* Backdrop */
+scale.horizontal:backdrop slider {
+    box-shadow:
+        0 0 0 0.0625em alpha(@lumina_primary, 0.15);
+}
+
+scale slider:disabled {
+    opacity: 0.4;
+}
+
+/* ============================================================
+   VOLUMEN (HORIZONTAL + VERTICAL)
+   ============================================================ */
+
+volume scale trough,
+scale.vertical trough {
+    background-color: alpha(@lumina_outline, 0.2);
+    border-radius: 999px;
+}
+
+volume scale highlight,
+scale.vertical highlight {
+    background-color: @lumina_primary;
+    border-radius: 999px;
+}
+
+volume scale slider,
+scale.vertical slider {
+    background-color: @lumina_primary;
+    border-radius: 999px;
+}
+
+/* ============================================================
+   BOTONES DE CONTROL
+   ============================================================ */
+
+.player button,
+.media-player button {
+    background-color: transparent;
+    border-radius: 999px;
+
+    padding: 0.5em;
+    min-width: 2.25em;
+    min-height: 2.25em;
+
+    color: @lumina_text;
+
+    transition:
+        background-color 150ms ease,
+        transform 120ms ease;
+}
+
+/* Hover */
+.player button:hover,
+.media-player button:hover {
+    background-color: alpha(@lumina_primary, 0.12);
+}
+
+/* Active (Fluent click) */
+.player button:active,
+.media-player button:active {
+    transform: scale(0.92);
+    background-color: alpha(@lumina_primary, 0.2);
+}
+
+/* Disabled */
+.player button:disabled {
+    opacity: 0.45;
+    background-color: transparent;
+    transform: none;
+}
+
+/* Botón principal (Play / Pause) */
+.player button.suggested-action {
+    background-color: @lumina_primary;
+    color: @lumina_bg;
+}
+
+.player button.suggested-action:hover {
+    background-color: shade(@lumina_primary, 1.1);
+}
+
+.player button.suggested-action:active {
+    transform: scale(0.9);
+}
+
+/* ============================================================
+   TIEMPO / METADATA
+   ============================================================ */
+
+.player label,
+.media-player label {
+    color: @lumina_text_secondary;
+    font-size: 0.9em;
+}
+
+/* Tiempo actual */
+.player .time-current {
+    color: @lumina_primary;
+    font-weight: 600;
+}
+
+/* Backdrop */
+.player:backdrop label {
+    color: alpha(@lumina_text_secondary, 0.7);
+}
+
+/* ============================================================
+   LISTAS DE REPRODUCCIÓN
+   ============================================================ */
+
+.playlist,
+.tracklist,
+.playlist-view {
+    background-color: @lumina_card;
+    border-radius: 0.375em;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* Filas */
+.tracklist row {
+    transition: background-color 120ms ease;
+}
+
+/* Hover */
+.tracklist row:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+}
+
+/* Activa */
+.tracklist row:selected {
+    background-color: alpha(@lumina_primary, 0.12);
+    color: @lumina_primary;
+
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* Backdrop */
+.tracklist row:selected:backdrop {
+    background-color: alpha(@lumina_primary, 0.08);
+    box-shadow: inset 0.1875em 0 0 @lumina_text_secondary;
+}
+
+/* ============================================================
+   VIDEO OVERLAY (CONTROLES SOBRE VIDEO)
+   ============================================================ */
+
+video overlay,
+.video-overlay {
+    background: linear-gradient(
+        to top,
+        alpha(black, 0.45),
+        transparent 60%
+    );
+}
+
+/* Controles flotantes */
+video overlay button {
+    color: white;
+}
+
+video overlay button:hover {
+    background-color: alpha(white, 0.15);
+}
+
+/* ============================================================
+   BACKDROP GLOBAL
+   ============================================================ */
+
+.player:backdrop,
+.media-player:backdrop {
+    color: @lumina_text_secondary;
+}
+
+/* ============================================================
+   LUMINA – BUDGIE MEDIA SUPPORT
+   ============================================================ */
+
+/* Applet multimedia del panel */
+.budgie-panel .media-player,
+.budgie-panel .player {
+    background-color: transparent;
+    color: @lumina_text;
+}
+
+/* Raven (panel lateral) */
+.raven,
+.raven-view {
+    background-color: @lumina_bg;
+    color: @lumina_text;
+}
+
+/* Contenedor de media en Raven */
+.raven .media-player,
+.raven .player {
+    background-color: transparent;
+}
+
+/* Sliders de Raven */
+.raven scale.horizontal trough {
+    background-color: alpha(@lumina_outline, 0.25);
+}
+
+.raven scale.horizontal highlight {
+    background-color: @lumina_primary;
+}
+
+.raven scale.horizontal slider {
+    background-color: @lumina_primary;
+    border-radius: 999px;
+}
+
+/* Botones en Raven */
+.raven button {
+    background-color: transparent;
+    border-radius: 999px;
+}
+
+.raven button:hover {
+    background-color: alpha(@lumina_primary, 0.12);
+}
+
+.raven button:active {
+    transform: scale(0.92);
+}
+

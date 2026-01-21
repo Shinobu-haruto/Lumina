@@ -1,26 +1,30 @@
-@import url("main.css");
-@import url("application/filemanager.scss");
-@import url("application/players.scss");
-@import url("application/editors.scss");
-@import url("application/gnome.scss");
-@import url("interface/buttons.scss");
-@import url("interface/levelbar.scss");
-@import url("interface/headerbar.scss");
-@import url("interface/entry.scss");
-@import url("interface/menus.scss");
-@import url("interface/tabs.scss");
-@import url("interface/slider.scss");
-@import url("interface/switch.scss");
-@import url("interface/popvers.scss");
-@import url("interface/progressbar.scss");
-@import url("interface/checkbox.scss");
-@import url("mode/dark.scss");
-@import url("widgets.css");
+/* Loader*/
+@import url("mode/lumina.ui.manifest.light.scss");
+@import url("interface/lumina.ui.shell.scss");
+@import url("interface/lumina.ux.shell.scss");
 
-/* Reset global para Lumina */
-* {
-    -GtkLabel-allow-focus: false;
-    -GtkWidget-focus-padding: 2;
-    -GtkWidget-focus-line-width: 2;
-    outline-radius: 16px;
-}
+/*Applications*/
+
+@import url("application/lumina.app.filemanager.scss");
+@import url("application/lumina.app.media-players.scss");
+@import url("application/lumina.app.text-editors.scss");
+
+/*Interface*/
+
+@import url("interface/lumina.ui.controls.buttons.scss");
+@import url("interface/lumina.ui.navigation.scrollbar.scss");
+@import url("interface/lumina.ui.feedback.levelbar.scss");
+@import url("interface/lumina.ui.chrome.headerbar.scss");
+@import url("interface/lumina.ui.controls.entry.scss");
+@import url("interface/lumina.ui.surface.menus.scss");
+@import url("interface/lumina.ui.navigation.tabs.scss");
+@import url("interface/lumina.ui.controls.slider.scss");
+@import url("interface/lumina.ui.controls.switch.scss");
+@import url("interface/lumina.ui.surface.popvers.scss");
+@import url("interface/lumina.ui.feedback.progressbar.scss");
+@import url("interface/lumina.ui.controls.checkbox.scss");
+
+/* platform */
+@import url("platforms/lumina.platform.gnome-ecosystem.scss");
+@import url("platforms/lumina.platform.xfce-ecosystem.scss");
+@import url("platforms/lumina.platform.budgie-ecosystem.scss");

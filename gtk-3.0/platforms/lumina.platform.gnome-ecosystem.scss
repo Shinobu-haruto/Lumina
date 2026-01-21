@@ -1,0 +1,304 @@
+/* ============================================================
+   LUMINA UI – GNOME APPS
+   Target: GNOME core applications (GTK 3.x)
+   Filosofía: superficies claras, foco suave, lectura y control
+   ============================================================ */
+
+/* ============================================================
+   APP WINDOW SURFACE
+   ============================================================ */
+
+window.gnome-app,
+.nautilus-window,
+.gnome-control-center,
+.gnome-software,
+.gnome-calendar {
+    background-color: @lumina_bg;
+    background-image: none;
+    color: @lumina_text;
+}
+
+/* ============================================================
+   CONTENT AREAS
+   ============================================================ */
+
+.content,
+.content-area,
+.view,
+stack,
+stack > box {
+    background-color: transparent;
+    color: @lumina_text;
+}
+
+/* Evita fondos fantasma */
+stack > widget {
+    background-color: transparent;
+}
+
+/* ============================================================
+   MATERIAL-LIKE CARDS
+   ============================================================ */
+
+.card,
+.frame,
+.preferences-page,
+.preferences-group {
+    background-color: @lumina_card;
+    border-radius: 0.75em;
+    padding: 1em;
+
+    box-shadow:
+        0 0.0625em 0.125em alpha(black, 0.08),
+        0 0.375em 0.75em alpha(black, 0.06);
+
+    transition: box-shadow 200ms ease;
+}
+
+/* Cards sin foco */
+window:backdrop .card,
+window:backdrop .frame,
+window:backdrop .preferences-page {
+    box-shadow:
+        0 0.0625em 0.125em alpha(black, 0.04);
+}
+
+/* ============================================================
+   SECTION HEADERS (SETTINGS / PANELS)
+   ============================================================ */
+
+.preferences-group-title,
+.section-title,
+.title-4 {
+    font-size: 0.85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    color: @lumina_text_secondary;
+    margin-bottom: 0.5em;
+}
+
+/* ============================================================
+   LISTS & ROWS
+   ============================================================ */
+
+list,
+listview {
+    background-color: transparent;
+    border: none;
+}
+
+list row,
+listview row {
+    border-radius: 0.5em;
+    padding: 0.5em 0.75em;
+    margin: 0.125em 0;
+
+    transition:
+        background-color 150ms ease,
+        color 150ms ease;
+}
+
+/* Hover */
+list row:hover,
+listview row:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+}
+
+/* Selected */
+list row:selected,
+listview row:selected {
+    background-color: alpha(@lumina_primary, 0.18);
+    color: @lumina_primary;
+
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* Backdrop selection */
+list row:selected:backdrop,
+listview row:selected:backdrop {
+    background-color: alpha(@lumina_primary, 0.1);
+    box-shadow: inset 0.1875em 0 0 @lumina_text_secondary;
+}
+
+/* ============================================================
+   SIDEBARS / NAVIGATION
+   ============================================================ */
+
+.sidebar,
+.sidebar-view,
+.navigation-sidebar,
+placessidebar {
+    background-color: @lumina_surface;
+    border-right: 0.0625em solid @lumina_outline;
+    padding: 0.5em;
+}
+
+/* Sidebar items */
+.sidebar row,
+.navigation-sidebar row,
+placessidebar row {
+    border-radius: 0.5em;
+    padding: 0.5em 0.75em;
+
+    color: @lumina_text_secondary;
+    transition:
+        background-color 150ms ease,
+        color 150ms ease;
+}
+
+/* Hover */
+.sidebar row:hover,
+.navigation-sidebar row:hover,
+placessidebar row:hover {
+    background-color: alpha(@lumina_primary, 0.08);
+    color: @lumina_primary;
+}
+
+/* Selected */
+.sidebar row:selected,
+.navigation-sidebar row:selected,
+placessidebar row:selected {
+    background-color: alpha(@lumina_primary, 0.2);
+    color: @lumina_primary;
+
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* ============================================================
+   TOOLBARS / HEADERBARS
+   ============================================================ */
+
+toolbar,
+.action-bar,
+headerbar {
+    background-color: @lumina_bg;
+    background-image: none;
+
+    border: none;
+    border-bottom: 0.0625em solid @lumina_outline;
+    box-shadow: none;
+}
+
+/* Buttons inside toolbars */
+toolbar button,
+headerbar button {
+    border-radius: 0.5em;
+}
+
+/* ============================================================
+   INFOBARS / BANNERS
+   ============================================================ */
+
+infobar {
+    background-color: @lumina_card;
+    border-radius: 0.5em;
+    padding: 0.75em;
+
+    box-shadow:
+        0 0.125em 0.375em alpha(black, 0.08);
+}
+
+/* ============================================================
+   EMPTY STATES / PLACEHOLDERS
+   ============================================================ */
+
+.empty-state,
+.placeholder,
+.dim-label {
+    color: @lumina_text_secondary;
+    font-size: 0.9em;
+}
+
+/* ============================================================
+   BACKDROP WINDOW
+   ============================================================ */
+
+window:backdrop {
+    color: @lumina_text_secondary;
+}
+
+/* ============================================================
+   SWITCHES (GNOME CRÍTICO)
+   ============================================================ */
+
+switch {
+    background-color: alpha(@lumina_outline, 0.35);
+    border-radius: 999px;
+    min-width: 2.5em;
+    min-height: 1.25em;
+}
+
+switch slider {
+    background-color: @lumina_surface;
+    border-radius: 999px;
+}
+
+switch:checked {
+    background-color: @lumina_primary;
+}
+
+switch:checked slider {
+    background-color: @lumina_bg;
+}
+
+/* ============================================================
+   CHECK / RADIO
+   ============================================================ */
+
+check,
+radio {
+    background-color: transparent;
+    border: 0.125em solid @lumina_outline;
+    border-radius: 0.25em;
+}
+
+check:checked,
+radio:checked {
+    background-color: @lumina_primary;
+    border-color: @lumina_primary;
+}
+
+/* ============================================================
+   DIALOGS
+   ============================================================ */
+
+dialog,
+messagedialog {
+    background-color: @lumina_bg;
+    border-radius: 0.75em;
+}
+
+dialog .content-area {
+    padding: 1em;
+}
+
+headerbar button:hover {
+    background-color: alpha(@lumina_primary, 0.12);
+}
+
+headerbar button:active {
+    background-color: alpha(@lumina_primary, 0.2);
+}
+
+/* ============================================================
+   SEARCH ENTRY
+   ============================================================ */
+
+searchbar entry,
+.search-entry {
+    background-color: @lumina_surface;
+    border-radius: 999px;
+    padding: 0.5em 0.75em;
+}
+
+searchbar entry:focus {
+    border-color: @lumina_primary;
+}
+
+separator {
+    background-color: alpha(@lumina_outline, 0.35);
+    min-height: 1px;
+}
+

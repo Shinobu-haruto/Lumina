@@ -1,0 +1,99 @@
+/* ============================================================
+   LUMINA UI – BUDGIE PLATFORM
+   Target: Budgie Desktop (GTK 3.x)
+   Filosofía: claridad, equilibrio, elegancia discreta
+   ============================================================ */
+
+/* ============================================================
+   PANEL (budgie-panel)
+   ============================================================ */
+
+.budgie-panel {
+    background-color: @lumina_surface;
+    border-bottom: 0.0625em solid @lumina_outline;
+    box-shadow: none;
+}
+
+/* Panel items / applets */
+.budgie-panel button {
+    border-radius: 0.5em;
+    padding: 0.25em 0.5em;
+}
+
+.budgie-panel button:hover {
+    background-color: alpha(@lumina_primary, 0.12);
+}
+
+/* ============================================================
+   TASKLIST
+   ============================================================ */
+
+.budgie-tasklist button {
+    background-color: transparent;
+    border-radius: 0.5em;
+    color: @lumina_text_secondary;
+}
+
+.budgie-tasklist button:checked {
+    background-color: alpha(@lumina_primary, 0.2);
+    color: @lumina_primary;
+}
+
+/* ============================================================
+   RAVEN (SIDEBAR CENTRAL DE BUDGIE)
+   ============================================================ */
+
+.budgie-raven {
+    background-color: @lumina_bg;
+    color: @lumina_text;
+}
+
+.budgie-raven .raven-header {
+    font-weight: 700;
+    color: @lumina_text_secondary;
+}
+
+.budgie-raven .raven-section {
+    background-color: @lumina_card;
+    border-radius: 0.75em;
+    padding: 0.75em;
+}
+
+/* ============================================================
+   APPLET POPOVERS
+   ============================================================ */
+
+.budgie-popover {
+    background-color: @lumina_bg;
+    border-radius: 0.5em;
+    box-shadow:
+        0 0.25em 0.75em alpha(black, 0.15);
+}
+
+/* ============================================================
+   NOTIFICATIONS
+   ============================================================ */
+
+.budgie-notification {
+    background-color: @lumina_card;
+    border-radius: 0.5em;
+    padding: 0.75em;
+}
+
+.budgie-notification-title {
+    font-weight: 700;
+}
+
+/* ============================================================
+   DIALOGS
+   ============================================================ */
+
+dialog {
+    background-color: @lumina_bg;
+    border-radius: 0.75em;
+}
+
+dialog .content-area {
+    padding: 1em;
+}
+

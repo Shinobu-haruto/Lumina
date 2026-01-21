@@ -1,0 +1,48 @@
+/* ============================================================
+   LUMINA – PALETA BASE (LIGHT)
+   ============================================================ */
+
+/* --- COLOR PRIMARIO (IDENTIDAD + ACCIÓN) --- */
+@define-color lumina_primary rgb(107,93,211);
+@define-color lumina_on_primary rgb(255,255,255);
+@define-color lumina_primary_container rgb(233,230,255);
+
+/* --- NEUTROS (90% DE LA UI) --- */
+@define-color lumina_bg rgb(251,250,255);          /* Fondo principal */
+@define-color lumina_surface rgb(243,242,248);     /* Headerbar, sidebars */
+@define-color lumina_card rgb(255,255,255);        /* Tarjetas y diálogos */
+
+@define-color lumina_text rgb(27,26,31);        /* Texto principal */
+@define-color lumina_text_secondary rgb(90,86,96);
+
+/* --- ESTADOS (BAJA SATURACIÓN, BAJA FRECUENCIA) --- */
+@define-color lumina_error rgb(192,54,44);        /* Solo acciones críticas */
+@define-color lumina_warning rgb(183,129,3);      /* Advertencias puntuales */
+@define-color lumina_success rbg(47,111,78);      /* Confirmaciones silenciosas */
+
+/* --- BORDES Y SOMBRAS (ARQUITECTURA, NO DECORACIÓN) --- */
+@define-color lumina_outline rgba(120, 118, 130, 0.18);
+@define-color lumina_shadow_sm rgba(0, 0, 0, 0.06);
+@define-color lumina_shadow_lg rgba(0, 0, 0, 0.12);
+
+/* ============================================================
+   COMPATIBILIDAD GTK 3 (HERENCIA LIMPIA)
+   ============================================================ */
+@define-color theme_fg_color @lumina_text;
+@define-color theme_bg_color @lumina_bg;
+@define-color theme_selected_bg_color @lumina_primary;
+@define-color theme_selected_fg_color @lumina_on_primary;
+
+/* ============================================================
+   WINDOW CONTROLS (IDENTIDAD LUMINA)
+   ============================================================ */
+
+/* Base neutra: NO macOS colors */
+@define-color button_control_bg transparent;
+@define-color button_control_hover alpha(@lumina_primary, 0.12);
+@define-color button_control_active alpha(@lumina_primary, 0.2);
+
+/* Cerrar (único con semántica de peligro) */
+@define-color button_close_hover alpha(@lumina_error, 0.15);
+@define-color button_close_active alpha(@lumina_error, 0.25);
+
