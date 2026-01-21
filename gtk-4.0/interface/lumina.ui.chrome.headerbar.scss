@@ -1,0 +1,46 @@
+/* ============================================================
+   LUMINA – HEADERBAR (GTK 4)
+   ============================================================ */
+
+/* Headerbar real (CSD) */
+headerbar,
+headerbar.titlebar,
+headerbar:backdrop,
+headerbar.titlebar:backdrop {
+     background-color: @lumina_bg;
+    background-image: none;
+    border-radius: 0.375em 0.375em 0 0;
+    min-height: 1.75em; /* 28px */
+    padding: 0 0.75em;
+    outline: none;
+    border: none;
+    border-bottom: 0.0625em solid alpha(@lumina_outline, 0.7);
+    box-shadow: none;
+}
+
+/* Contenedor interno */
+headerbar > box,
+headerbar.titlebar > box {
+    background-color: @lumina_bg;
+    background-image: none;
+}
+
+/* Títulos */
+headerbar .title {
+    font-weight: 600;
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+    color: @lumina_text;
+}
+
+headerbar .subtitle {
+    font-size: 0.6875em;
+    color: @lumina_text_secondary;
+}
+
+/* Botones */
+headerbar button {
+    min-width: 2.375em;
+    min-height: 2.375em;
+}
+

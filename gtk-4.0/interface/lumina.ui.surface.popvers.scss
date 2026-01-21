@@ -1,0 +1,70 @@
+/* ============================================================
+   LUMINA – POPOVERS (GTK 4)
+   ============================================================ */
+
+/* --- CONTENEDOR EXTERNO (SHELL) --- */
+popover {
+    background-color: @lumina_bg;
+    box-shadow: none;
+    margin: 0.25em;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* --- CAJA REAL DEL POPOVER (CONTENIDO) --- */
+popover > contents {
+     background-color: @lumina_card;
+    background-image: none;
+
+    border-radius: 0.375em;          /* 6px */
+    border: 0.0625em solid @lumina_outline;
+    padding: 0.375em;
+    box-shadow: 0.0625em 0.0625em 0 alpha(@lumina_primary, 0.08);
+}
+
+/* Backdrop (sin foco) */
+popover:backdrop {
+    box-shadow: 0.1875em 0.1875em 0 alpha(black, 0.04);
+}
+
+/* --- FLECHA DEL POPOVER --- */
+popover arrow {
+    background-color: @lumina_bg;
+    border: 0.0625em solid @lumina_outline;
+}
+
+/* ============================================================
+   ELEMENTOS INTERNOS
+   ============================================================ */
+popover modelbutton {
+    min-height: 2.2em;
+    padding: 0.45em 0.75em;
+    margin: 0.125em;
+
+    border-radius: 0.4em;
+    background: transparent;
+    border: none;
+    color: @lumina_text;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+popover modelbutton:hover {
+    background-color: alpha(@lumina_primary, 0.10);
+}
+
+popover modelbutton:active {
+    background-color: alpha(@lumina_primary, 0.18);
+}
+
+/* ============================================================
+   SEPARADORES
+   ============================================================ */
+popover separator {
+    background-color: @lumina_outline;
+
+    margin: 0.25em 0.5em;
+    min-height: 0.0625em;
+
+    opacity: 0.2;
+}
+

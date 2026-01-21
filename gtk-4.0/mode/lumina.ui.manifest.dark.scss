@@ -1,0 +1,34 @@
+/* ============================================================
+   LUMINA – DARK MODE (REFINADO)
+   Material You inspired, pero con carácter propio
+   ============================================================ */
+
+/* --- COLORES DE ACENTO --- */
+@define-color lumina_primary #D6C8FF;           /* Morado suave, más cálido */
+@define-color lumina_on_primary #2A1A4A;        /* Texto profundo, no negro puro */
+@define-color lumina_primary_container #5B469C; /* Botones y toggles activos */
+
+/* --- SUPERFICIES (ESCALONADAS REALMENTE) --- */
+@define-color lumina_bg #1B1A1F;                 /* Fondo base (Nivel 0) */
+@define-color lumina_surface #232129;            /* Barras / headerbars (Nivel 1) */
+@define-color lumina_card #2F2C36;               /* Cards / popovers (Nivel 2) */
+@define-color lumina_overlay #3A3642;            /* Menús elevados (Nivel 3) */
+
+/* --- TIPOGRAFÍA --- */
+@define-color lumina_text #E7E2E8;               /* Texto principal */
+@define-color lumina_text_secondary #A09BA6;     /* Secundario legible */
+@define-color lumina_text_disabled #6E6A75;      /* Estados inactivos */
+
+/* --- ESTADOS --- */
+@define-color lumina_success #8FD694;            /* Verde calmado */
+@define-color lumina_error #F3B3AF;              /* Error visible sin gritar */
+@define-color lumina_warning #FFD08A;            /* Advertencia suave */
+
+/* --- BORDES Y SOMBRAS --- */
+@define-color lumina_outline rgba(160, 155, 166, 0.22);
+@define-color lumina_outline_strong rgba(160, 155, 166, 0.35);
+
+@define-color lumina_shadow_sm rgba(0, 0, 0, 0.45);
+@define-color lumina_shadow_md rgba(0, 0, 0, 0.6);
+@define-color lumina_shadow_lg rgba(0, 0, 0, 0.75);
+

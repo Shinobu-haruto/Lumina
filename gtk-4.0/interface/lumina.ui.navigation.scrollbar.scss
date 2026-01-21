@@ -1,0 +1,46 @@
+/* ============================================================
+   LUMINA – ADAPTIVE SCROLLBAR (GTK 4)
+   ============================================================ */
+
+scrollbar {
+    background-color: transparent;
+    transition: none;
+    margin: 0;
+}
+
+/* Único elemento realmente estilable en GTK 4 */
+scrollbar slider {
+    background-color: alpha(@lumina_text, 0.35);
+    border-radius: 999px;
+    min-width: 0.375em;
+    min-height: 0.375em;
+    transition:
+        background-color 150ms ease,
+        min-width 150ms ease,
+        min-height 150ms ease;
+}
+
+/* Hover */
+scrollbar slider:hover {
+    background-color: alpha(@lumina_primary, 0.65);
+}
+
+/* Active (drag real) */
+scrollbar slider:active {
+     background-color: @lumina_primary;
+}
+
+/* Ventana sin foco */
+scrollbar slider:backdrop {
+    background-color: alpha(@lumina_text_secondary, 0.25);
+}
+
+/* Orientación */
+scrollbar.vertical slider {
+   min-width: 0.375em;
+}
+
+scrollbar.horizontal slider {
+    min-height: 0.375em;
+}
+

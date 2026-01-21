@@ -1,0 +1,32 @@
+
+listview listitem {
+    padding: 0.75em 1em;
+    border-bottom: 0.0625em solid @lumina_outline;
+}
+
+/* Estado seleccionado */
+listview listitem:selected {
+    background-color: alpha(@lumina_primary, 0.15);
+    color: @lumina_primary;
+    box-shadow: inset 0.25em 0 0 @lumina_primary;
+}
+
+/* --- TOOLTIPS (Estilo Material 3) --- */
+tooltip {
+   background-color: @lumina_bg;
+    color: #F4EFF4;
+    /* 8px -> 0.5em */
+    border-radius: 0.5em;
+    /* 4px 8px -> 0.25em 0.5em */
+    padding: 0.25em 0.5em;
+    border: none;
+    /* Sombra sutil: 2px 4px -> 0.125em 0.25em */
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
+}
+
+/* --- SELECCIÓN GENERAL --- */
+selection {
+    background-color: alpha(@lumina_primary, 0.3);
+    color: @lumina_text;
+}
+
