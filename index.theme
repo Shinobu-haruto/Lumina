@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
 Name=Lumina UI
-Comment=Un tema GTK 3.0 intuitivo inspirado en Material UI
+Comment=Experience Lumina
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=Lumina
 MetacityTheme=Lumina
-IconTheme=Adwaita
+IconTheme=Papirus
 CursorTheme=Adwaita
 ButtonLayout=close,minimize,maximize:menu
