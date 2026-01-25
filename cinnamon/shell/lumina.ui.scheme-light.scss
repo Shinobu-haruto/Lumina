@@ -1,0 +1,210 @@
+
+.label-shadow {
+  color: rgba(0, 0, 0, 0);
+}
+
+.sound-button {
+  min-height: 24px;
+  padding: 5px 32px;
+  transition-duration: 100ms;
+  border-radius: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.04);
+  }
+  
+  .cinnamon-link {
+  color: #1A73E8;
+  text-decoration: underline;
+}
+
+.cinnamon-link:hover {
+  color: #488fed;
+}
+#panel, #panel-container, .panel-background, #panel:hightlight, .window-caption {
+    background-color: #F0F2F5;
+    color: #2E3440;
+    height: 2em;
+    border-bottom: 0.0625em solid #4C566A;
+    border-radius: 0.375em;
+    padding: 0.25em 0 0.25em 0;
+    border-image: none;
+    border: 0.25em solid #f0f2f5;
+}
+
+/* Bordes de paneles */
+.panel-top    { border-bottom: 0.25em solid #5E81AC; }
+.panel-bottom { border-top:    0.25em solid #5E81AC; }
+.panel-left-side  { border-right: 0.25em solid #5E81AC; }
+.panel-right-side { border-left:  0.25em solid #5E81AC; }
+
+/* Applets y elementos internos del panel */
+.panel-button,
+.applet-box,
+.window-list-item-box {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0 0.625em; /* 10px */
+    color: #4C566A;
+    font-weight: 700;
+    transition: none;
+}
+
+.panel-button:hover,
+.applet-box:hover,
+.window-list-item-box:hover {
+    background-color: #E5E9F0;
+    color: #5E81AC;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box.active {
+    background-color: rgba(94, 129, 172, 0.1);
+    color: #5E81AC;
+    box-shadow: inset 0 -0.1875em 0 #5E81AC;
+}
+
+/* ============================================================
+   MENÚS
+   ============================================================ */
+
+/* ============================================================
+   NOTIFICACIONES Y HUD
+   ============================================================ */
+#notification,
+#switcher-list,
+.osd-window, .switcher-list {
+    background-color: #F0F2F5;
+    border: 0.0625em solid #D8DEE9;
+    border-bottom: 0.25em solid #5E81AC;
+    border-radius: 0;
+    color: #2E3440;
+    margin: 7px 12px 17px 12px;
+     spacing-rows: 9px;
+  spacing-columns: 9px;
+  margin-from-right-edge-of-screen: 18px;
+}
+
+/* ============================================================
+   SCROLLBARS Y SLIDERS
+   ============================================================ */
+StScrollView StScrollBar {
+    width: 0.25em; /* 4px */
+}
+
+StScrollView StScrollBar StButton#vhandle {
+    background-color: rgba(94, 129, 172, 0.3);
+    border-radius: 0;
+}
+
+.popup-slider-menu-item {
+    -slider-height: 0.25em !important;
+    -slider-active-background-color: #5E81AC !important;
+    -slider-handle-radius: 0 !important;
+    -slider-handle-width: 0.75em !important; /* 12px */
+}
+
+/* ============================================================
+   DETALLES FINALES
+   ============================================================ */
+.resize-handle {
+    background-color: #5E81AC;
+    border: 0.0625em solid #F0F2F5;
+}
+
+/* Applet Badge */
+.applet-badge {
+    background-color: #5E81AC;
+    color: white;
+    border-radius: 0;
+    padding: 0.0625em 0.1875em;
+    font-size: 0.4375em; /* ~7pt */
+    font-weight: bold;
+}
+
+.menu-icon,
+.popup-menu-icon {
+  icon-size: 16px;
+}
+
+.popup-menu-boxpointer {
+  -arrow-border-radius: 12px;
+  -arrow-background-color: rgba(0, 0, 0, 0);
+  -arrow-border-width: 0;
+  -arrow-border-color: rgba(0, 0, 0, 0);
+  -arrow-base: 0;
+  -arrow-rise: 0;
+}
+
+.popup-combo-menu {
+  padding: 12px;
+}
+
+.popup-combobox-item {
+  spacing: 1em;
+}
+.popup-alternating-menu-item:alternate {
+  font-weight: normal;
+}
+
+.popup-device-menu-item {
+  spacing: .5em;
+}
+
+.popup-subtitle-menu-item {
+  font-weight: normal;
+}
+
+.nm-menu-item-icons {
+  spacing: .5em;
+}
+
+
+.about-content {
+  width: 550px;
+  height: 250px;
+  spacing: 8px;
+  padding-bottom: 10px;
+}
+
+.about-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.about-uuid {
+  font-size: 10px;
+  color: #888;
+}
+
+.about-icon {
+  padding-right: 20px;
+  padding-bottom: 14px;
+}
+
+.about-scrollBox {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 4px;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.about-scrollBox-innerBox {
+  padding: 1.2em;
+  spacing: 1.2em;
+}
+
+.about-description {
+  padding-top: 4px;
+  padding-bottom: 16px;
+}
+
+.about-version {
+  padding-left: 7px;
+  font-size: 10px;
+  color: #888;
+}
+
+
