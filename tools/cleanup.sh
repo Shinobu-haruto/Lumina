@@ -2,17 +2,25 @@
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 THEME_DIR="$HOME/.local/share/themes/Lumina"
-VERSION_FILE="$BASE_DIR/VERSION"
+if [ -f "$BUILD_FILE" ]; then
+    echo ""
+    echo "Build information:"
+    echo "-----------------------------------------"
+    cat "$BUILD_FILE"
+else
+    echo ""
+    echo "⚠ LUMINA_BUILD no encontrado"
+fi
 
 MODE="apply"
 [ "$1" = "--dry-run" ] && MODE="dry"
 
-if [ ! -f "$VERSION_FILE" ]; then
+if [ ! -f "$BUILD_FILE" ]; then
     echo "✖ Archivo VERSION no encontrado"
     exit 1
 fi
 
-CURRENT_VERSION="$(cat "$VERSION_FILE")"
+CURRENT_VERSION="$(cat "$LUMINA_BUILD")"
 
 echo "========================================="
 echo " Lumina UI – Cleanup Mode"
