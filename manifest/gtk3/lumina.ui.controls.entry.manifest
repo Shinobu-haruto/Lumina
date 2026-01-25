@@ -1,4 +1,4 @@
-/* --- CAMPO DE TEXTO (ENTRY) --- */
+/* lumina.iu.controls.entry = Relase 2601 build 2401 */
 entry {
     min-height: 2em;
     padding: 0.375em 0.625em;
@@ -11,7 +11,6 @@ entry {
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Estado al pasar el mouse */
 entry:hover {
     background-color: alpha(@lumina_text, 0.05); /* Un sutil tinte */
     border-bottom-color: @lumina_text;
