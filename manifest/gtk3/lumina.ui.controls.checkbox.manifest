@@ -1,66 +1,87 @@
-/* --- EL CHECKBOX (CUADRADO) --- */
-check {
-    min-height: 1em; /* 16px */
-    min-width: 1em;
-    border-radius: 0.25em; /* 4px */
-    border: 0.125em solid @lumina_text_secondary;
-    background-color: transparent;
-    margin: 0.25em;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* ============================================================
+   LUMINA Interface  – Controls Checkbox
+   File: lumina.ui.controls.checkbox.manifest
+   Build: 2125
+   Author: Shinobu-haruto
+   Description: Shell Controls Checkbox
+   Target: Cinnamon | GTK
+   Patch: lumina.ui.manifest.light.scss
+   Dependencia: lumina.ui.shell.scss
+   Supported: Cinnamon, GTK3, GTK4
+   Last Modified: 2026-01-25
+   SHA256: 273bb3be2fc20b76b4f03b2d95bfad1dd81aa3818c34a7d73040b08d385ca390
+   ENV: Cinnamon
+   ENV: GTK3
+   ENV: GTK4 (experimental)
+   ============================================================ */
 
-check:checked {
-    background-color: @lumina_primary;
-    border-color: @lumina_primary;
-    background-size: 0.875em; /* 14px */
-    background-image: url("assets/check.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
-check:hover {
-    border-color: @lumina_primary;
-    /* Efecto halo sutil */
-    box-shadow: 0 0 0 0.625em alpha(@lumina_primary, 0.1);
-}
-
-/* --- EL RADIO BUTTON (CÍRCULO) --- */
-radio {
-    min-height: 1.25em; /* 20px */
-    min-width: 1.25em;
-    border-radius: 9999px; 
-    border: 0.125em solid @lumina_text_secondary;
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin: 0.25em;
+      
+      check {
+        min-height: 1em;
+        min-width: 1em;
+        border-radius: 0.25em;
+        border: 0.125em solid @lumina_text_secondary;
+        background-color: transparent;
+        margin: 0.25em;
+        transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 
-/* Estado Seleccionado */
-radio:checked {
-    border-color: @lumina_primary;
-    /* Punto central estilo Material 3 */
-    background-image: radial-gradient(circle, @lumina_primary 50%, transparent 60%);
-    background-size: 100% 100%;
+      check:checked {
+        background-color: @lumina_primary;
+        border-color: @lumina_primary;
+        background-size: 0.875em;
+        background-image: url("assets/check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
 }
 
-/* Estado Hover (Interacción Material) */
-radio:hover {
-    border-color: @lumina_primary;
-    box-shadow: 0 0 0 0.625em alpha(@lumina_primary, 0.1);
+
+
+      check:hover {
+        border-color: @lumina_primary;
+        box-shadow: 0 0 0 0.625em alpha(@lumina_primary, 0.1);
 }
 
-/* Estado Focus (Accesibilidad) */
-radio:focus {
-    box-shadow: 0 0 0 0.125em @lumina_bg, 
-                0 0 0 0.25em @lumina_primary;
+
+
+      radio {
+        min-height: 1.25em;
+        min-width: 1.25em;
+        border-radius: 9999px; 
+        border: 0.125em solid @lumina_text_secondary;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        margin: 0.25em;
 }
 
-/* Estado Activo (Presión física) */
-radio:active,
-check:active {
-    transform: scale(0.9);
+
+
+    radio:checked {
+        border-color: @lumina_primary;
+        background-image: radial-gradient(circle, @lumina_primary 50%, transparent 60%);
+        background-size: 100% 100%;
+}
+
+
+
+    radio:hover {
+        border-color: @lumina_primary;
+        box-shadow: 0 0 0 0.625em alpha(@lumina_primary, 0.1);
+}
+
+
+
+    radio:focus {
+        box-shadow: 0 0 0 0.125em @lumina_bg, 0 0 0 0.25em @lumina_primary;
+}
+
+
+
+    radio:active, check:active {
+        transform: scale(0.9);
 }
