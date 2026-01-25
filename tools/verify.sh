@@ -3,19 +3,25 @@
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 THEME_DIR="$HOME/.themes/Lumina"
 MANIFEST_DIR="$BASE_DIR/manifest"
-VERSION_FILE="$BASE_DIR/VERSION"
-
-if [ ! -f "$VERSION_FILE" ]; then
-    echo "✖ Archivo VERSION no encontrado"
-    exit 1
-fi
-
-CURRENT_VERSION="$(cat "$VERSION_FILE")"
+BUILD_FILE="$BASE_DIR/LUMINA_BUILD"
 
 echo "========================================="
 echo " Lumina UI – Verify Mode"
-echo " Versión detectada: $CURRENT_VERSION"
 echo "========================================="
+
+if [ -f "$BUILD_FILE" ]; then
+    echo ""
+    echo "Build information:"
+    echo "-----------------------------------------"
+    cat "$BUILD_FILE"
+else
+    echo ""
+    echo "⚠ LUMINA_BUILD no encontrado"
+fi
+
+STATE_FILE="$BASE_DIR/.lumina-state"
+SYSTEM_OK=true
+
 sleep 1
 
 verify_group() {
@@ -85,7 +91,13 @@ verify_group "$MANIFEST_DIR/xfwm4" \
 verify_group "$MANIFEST_DIR/kde" \
              "$THEME_DIR/kde" \
              "KDE"
-
+if [ "$SYSTEM_OK" = true ]; then
+    echo "Estado del sistema: OK"
+    echo "OK" > "$STATE_FILE"
+else
+    echo "Estado del sistema: DEGRADED"
+    echo "DEGRADED" > "$STATE_FILE"
+    
 echo ""
 echo "========================================="
 echo " Verificación completada"
