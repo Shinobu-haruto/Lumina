@@ -1,8 +1,19 @@
 /* ============================================================
-   LUMINA – HEADERBAR FIX (GTK 3.x)
+   LUMINA Interface  – Shell Caption
+   File: lumina.ui.chrome.headerbar.manifest
+   Build: 2125
+   Author: Shinobu-haruto
+   Description: Shell Window
+   Target: Cinnamon | GTK
+   Patch: lumina.ui.manifest.light.scss
+   Dependencia: lumina.ui.shell.scss
+   Supported: Cinnamon, GTK3, GTK4
+   Last Modified: 2026-01-25
+   SHA256: dc96092cf25b1a6fbd46eb3232faac5e9df1c071030bf3dce98455cef0a30034
+   ENV: Cinnamon
+   ENV: GTK3
+   ENV: GTK4 (experimental)
    ============================================================ */
-
-/* Headerbar real (CSD) */
 headerbar,
 headerbar.titlebar,
 headerbar:backdrop,
