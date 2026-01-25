@@ -1,0 +1,18 @@
+.window-caption#selected {
+  background-color: #1A73E8;
+  color: white;
+  border: 1px solid #1A73E8;
+  spacing: 25px;
+}
+
+
+.window-close:rtl {
+  -st-background-image-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.window-close-area {
+  background-image: url("assets/trash-icon.svg");
+  height: 120px;
+  width: 400px;
+}
+

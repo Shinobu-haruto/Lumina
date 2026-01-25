@@ -1,0 +1,98 @@
+.expo-workspaces-name-entry,
+.expo-workspaces-name-entry#selected {
+  height: 15px;
+  border-radius: 12px;
+  font-size: 9pt;
+  padding: 5px 8px;
+  -cinnamon-caption-spacing: 4px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 2px solid transparent;
+}
+
+.expo-workspaces-name-entry:focus,
+.expo-workspaces-name-entry#selected:focus {
+  border: 1px solid #1A73E8;
+  background-color: #1A73E8;
+  color: white;
+  font-style: italic;
+  transition-duration: 300;
+  selection-background-color: white;
+  selected-color: #1A73E8;
+}
+
+.expo-workspace-thumbnail-frame {
+  border: 4px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+}
+
+.expo-workspace-thumbnail-frame#active {
+  border: 4px solid #1A73E8;
+  background-color: black;
+  border-radius: 12px;
+}
+
+.expo-background {
+  background-color: #343434;
+}
+
+.workspace-thumbnails {
+  spacing: 26px;
+}
+
+.workspace-thumbnails-background, .workspace-thumbnails-background:rtl {
+  padding: 8px;
+}
+
+.workspace-add-button {
+  background-image: url("assets/add-workspace.svg");
+  height: 200px;
+  width: 35px;
+  transition-duration: 100;
+}
+
+.workspace-add-button:hover {
+  background-image: url("assets/add-workspace-hover.svg");
+  transition-duration: 100;
+}
+
+.workspace-add-button:active {
+  background-image: url("assets/add-workspace-active.svg");
+  transition-duration: 100;
+}
+
+.workspace-overview-background-shade {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.workspace-close-button,
+.window-close {
+  background-image: url("assets/close.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
+  -cinnamon-close-overlap: 13px;
+}
+
+.workspace-close-button:hover,
+.window-close:hover {
+  background-image: url("assets/close-hover.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
+}
+
+.workspace-close-button:active,
+.window-close:active {
+  background-image: url("assets/close-active.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
+}
+
+.workspace-thumbnail-indicator {
+  outline: 2px solid red;
+  border: 1px solid green;
+}
+

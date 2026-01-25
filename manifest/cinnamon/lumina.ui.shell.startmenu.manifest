@@ -1,0 +1,55 @@
+.menu,
+.popup-menu,
+.popup-combo-menu,
+.popup-sub-menu,
+.popup-menu-item{
+    background-color: #F0F2F5 !important;
+    border: 0.0625em solid #D8DEE9;
+    border-radius: 0;
+    color: #2E3440 !important;
+    box-shadow: 0.375em 0.375em 0 rgba(0,0,0,0.1);
+}
+
+/* Buscador */
+.menu-search-box {
+    background-color: #E5E9F0;
+    border-bottom: 0.0625em solid #D8DEE9;
+    padding: 0.75em;
+}
+
+.menu-search-entry {
+    background-color: #FFFFFF;
+    border: 0.0625em solid #D8DEE9;
+    border-bottom: 0.125em solid #5E81AC;
+    border-radius: 0;
+    color: #2E3440;
+    padding: 0.625em 0.875em;
+    caret-color: #5E81AC;
+    width: 100%;
+}
+
+/* Paneles internos de menú */
+.menu-categories-box {
+    background-color: #E5E9F0;
+    border-right: 0.0625em solid #D8DEE9;
+    padding: 0.25em;
+}
+
+.menu-applications-inner-box {
+    background-color: #F0F2F5;
+    padding: 0.25em;
+}
+
+/* Categorías */
+.menu-category-button {
+    border-radius: 0;
+    padding: 0.5em 0.75em;
+    color: #4C566A;
+}
+
+.menu-category-button-selected {
+    background-color: #FFFFFF;
+    color: #5E81AC;
+    border-left: 0.25em solid #5E81AC;
+}
+

@@ -1,0 +1,450 @@
+stage {
+    font-family: "Sans Serif", Noto Sans;
+    font-size: 1em;
+    color: #ECEFF4;
+    background: linear-gradient(to bottom, #2E3440 0%, #323D4D 100%);
+    margin:0.25em 0 0.25em 0;
+}
+
+/* ============================================================
+   PANEL PRINCIPAL
+   ============================================================ */
+#panel, #panel-container, .panel-background {
+    background-color: rgba(50,61,77,0.9);
+    color: #ECEFF4;
+    height: 2em; /* 32px */
+    border-bottom: 0.0625em solid #4C566A;
+    border-radius: 0.375em;
+    padding: 0.25em 0 0.25em 0;
+}
+
+/* Bordes de paneles */
+.panel-top {
+    border-bottom: 0.1875em solid;
+    border-image: linear-gradient(to right, #88C0D0, #81A1C1) 1;
+    /*margin-top: 0.25em; */
+    border-radius: 0.25em;
+}
+
+.panel-bottom {
+    background-color: rgba(50,61,77,0.9); /* fondo oscuro semi-transparente */
+    backdrop-filter: blur(6px); /* efecto blur tipo Fluent */
+    border-radius: 0.25em;
+    }
+.panel-left-side  { border-right: 0.375em solid #4c566a; }
+.panel-right-side { border-left:  0.375em solid #4c566a; }
+
+/* Applets y elementos internos del panel */
+.panel-button,
+.applet-box,
+.window-list-item-box {
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 0.25em;
+    padding: 0 0.625em; /* 10px */
+    color: #D8DEE9;
+    font-weight: 700;
+    transition: none;
+}
+
+.panel-button:hover,
+.applet-box:hover,
+.window-list-item-box:hover {
+    background-color: #434C5E;
+    color: #88C0D0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box.active {
+    background-color: rgba(136, 192, 208, 0.1);
+    color: #88C0D0;
+    box-shadow: inset 0 -0.1875em 0 #88C0D0;
+    border-bottom: 0.125em solid #88C0D0;
+}
+
+/* ============================================================
+   MENÚS
+   ============================================================ */
+.menu {
+    background-color: #323d4d;
+    background-image: transparent;
+    border: 0.0625em solid rgba(67,76,94,0.6);
+    border-radius: 0.375em;
+    color: #ECEFF4;
+    box-shadow: 0.375em 0.375em 0 rgba(0,0,0,0.2);
+    border-image: rgba(50,61,77,0.9);
+}
+.menu-background {
+    background-color: #323D4D;
+    border-radius: 0.375em;
+    border: 0.0625em solid transparent;       /* necesario para border-image */
+    border-image: linear-gradient(to bottom, #4C566A, #88C0D0);
+    box-shadow: 0 0.1875em 0.375em rgba(0,0,0,0.2);
+}
+
+
+.menu-search-box {
+    background-color: #434C5E;
+    padding: 0.5em;
+    border-bottom: 0.0625em solid #4C566A;
+    border-radius: 0.25em 0.25em 0 0;
+}
+
+.menu-search-entry {
+    background-color: #4C566A;
+    color: #ECEFF4;
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    width: 100%;
+}
+
+.menu-separator {
+    height: 1px;
+    background-color: rgba(67,76,94,0.5);
+    margin: 0.25em 0;
+}
+
+/* Paneles internos de menú */
+.menu-categories-box {
+    background-color: #434C5E;
+    border-right: 0.0625em solid #4C566A;
+    padding: 0.25em;
+    background-image: none;
+    color: #d8dee9;
+}
+
+.menu-applications-inner-box {
+    background-color: #3B4252;
+    padding: 0.25em;
+    background-image: none;
+}
+
+.menu-application-button {
+    background-color: transparent;
+    color: #D8DEE9;
+    padding: 0.5em 0.75em;
+    border-radius: 0.25em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-application-button:hover {
+    background-color: rgba(136,192,208,0.15);
+    color: #88C0D0;
+}
+
+.menu-application-button:selected,
+.menu-application-button:active {
+    background-color: rgba(136,192,208,0.2);
+    color: #88C0D0;
+    border-left: 0.25em solid #88C0D0;
+}
+
+
+/* Categorías */
+.menu-category-button {
+    border-radius: 0.25em;
+    padding: 0.5em 0.75em;
+    color: #D8DEE9;
+    background-color: #434C5E;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-category-button:hover {
+    background-color: #4C566A;
+    color: #88C0D0;
+}
+
+.menu-category-button-selected {
+    background-color: #4F5B73; /* más visible que el hover */
+    color: #ECEFF4;
+    border-left: 0.25em solid #88C0D0;
+}
+
+.menu-favorite-button {
+    background-color: transparent;
+    color: #D8DEE9;
+    padding: 0.5em 0.75em;
+    border-radius: 0.25em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-favorite-button:hover {
+    background-color: rgba(136,192,208,0.15); /* efecto suave */
+    color: #88C0D0; /* color de acento */
+}
+
+.menu-favorite-button:selected,
+.menu-favorite-button:active {
+    background-color: rgba(136,192,208,0.2);
+    color: #88C0D0;
+    border-left: 0.25em solid #88C0D0;
+}
+
+.menu-favorites-separator {
+    height: 1px;
+    background-color: rgba(67,76,94,0.5);
+    margin: 0.25em 0;
+}
+
+.menu-favorite-button icon {
+    color: #D8DEE9;
+}
+
+.menu-favorite-button:hover icon {
+    color: #88C0D0;
+}
+.menu-favorite {
+ background-color: rgba(50,61,77,0.9);
+ }
+/* ============================================================
+   NOTIFICACIONES Y HUD
+   ============================================================ */
+#notification,
+#switcher-list,
+.osd-window {
+    background-color: #3B4252;
+    border: 0.0625em solid #4C566A;
+    border-bottom: 0.25em solid #88C0D0;
+    border-radius: 0;
+    color: #ECEFF4;
+    background-image: none;
+}
+
+.osd-window .level {
+    background-color: #4C566A;
+}
+
+.osd-window .level-bar {
+    background-color: #88C0D0;
+}
+
+/* ============================================================
+   SCROLLBARS Y SLIDERS
+   ============================================================ */
+StScrollView StScrollBar {
+    width: 0.25em; /* 4px */
+}
+
+StScrollView StScrollBar StButton#vhandle {
+    background-color: rgba(136, 192, 208, 0.3);
+    border-radius: 0;
+}
+
+.popup-slider-menu-item {
+    -slider-height: 0.25em !important;
+    -slider-active-background-color: #88C0D0 !important;
+    -slider-handle-radius: 0 !important;
+    -slider-handle-width: 0.75em !important; /* 12px */
+}
+
+/* ============================================================
+   DETALLES FINALES
+   ============================================================ */
+.resize-handle {
+    background-color: #88C0D0;
+    border: 0.0625em solid #3B4252;
+}
+
+/* Applet Badge */
+.applet-badge {
+    background-color: #88C0D0;
+    color: #2E3440;
+    border-radius: 0;
+    padding: 0.0625em 0.1875em;
+    font-size: 0.4375em; /* ~7pt */
+    font-weight: bold;
+}
+
+.switcher-list,
+.switcher-list-item {
+    background-color: #3B4252;
+    color: #ECEFF4;
+     border: 0.0625em solid #4C566A;
+}
+
+.switcher-list-item:selected,
+.switcher-list-item:focus {
+    background-color: rgba(136, 192, 208, 0.2);
+    color: #88C0D0;
+    border-bottom: 0.1875em solid #88C0D0;
+}
+
+.calendar,
+.calendar-header,
+.calendar-body {
+    background-color: #3B4252;
+    color: #ECEFF4;
+    background-image: none;
+}
+
+.calendar-day-base:hover {
+    background-color: #434C5E;
+}
+
+.calendar-day-base:selected {
+    background-color: #88C0D0;
+    color: #2E3440;
+}
+
+.popup-menu {
+    background-color: #3B4252;
+    border: 0.0625em solid #4C566A;
+    color: #ECEFF4;
+}
+
+.popup-menu-item {
+    padding: 0.5em 0.75em;
+}
+
+.popup-menu-item:hover {
+    background-color: #434C5E;
+    color: #88C0D0;
+}
+
+.tooltip {
+    background-color: #434C5E;
+    color: #ECEFF4;
+    border: 0.0625em solid #4C566A;
+    padding: 0.375em 0.5em;
+}
+
+#notification,
+.osd-window {
+    border: 0.0625em solid #4C566A;
+    border-bottom: 0.125em solid #88C0D0;
+    background-size: contain;
+}
+
+.popover {
+    background-color: #3C4455;      /* más oscuro que el panel */
+    color: #ECEFF4;
+    border-radius: 0.25em;
+    border: 0.0625em solid rgba(67,76,94,0.6);
+    box-shadow: 0 0.1875em 0.375em rgba(0,0,0,0.2);
+    padding: 0.5em;
+}
+
+.popover-item {
+    background-color: transparent;
+    color: #D8DEE9;
+    padding: 0.5em 0.75em;
+    border-radius: 0.25em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.popover-item:hover {
+    background-color: rgba(136,192,208,0.15);
+    color: #88C0D0;
+}
+
+.popover-item:active,
+.popover-item:selected {
+    background-color: rgba(136,192,208,0.2);
+    color: #88C0D0;
+    border-left: 0.25em solid #88C0D0;
+}
+
+.popover-header {
+    font-weight: 600;
+    color: #ECEFF4;
+    padding: 0.25em 0.5em;
+    border-bottom: 1px solid rgba(67,76,94,0.5);
+}
+
+.popover-separator {
+    height: 1px;
+    background-color: rgba(67,76,94,0.5);
+    margin: 0.25em 0;
+}
+
+.popover-item icon {
+    color: #D8DEE9;
+}
+
+.popover-item:hover icon {
+    color: #88C0D0;
+}
+
+.window, .window-frame {
+    background-color: #3B4252;
+    border-radius: 0.375em;
+    border: 0.0625em solid rgba(67,76,94,0.6);
+    color: #ECEFF4;
+    box-shadow: 0 0.1875em 0.375em rgba(0,0,0,0.2);
+}
+
+.titlebar, .window-title {
+    background-color: #323D4D;
+    color: #ECEFF4;
+    font-weight: 700;
+    padding: 0.25em 0.5em;
+}
+
+.titlebar button {
+    background-color: transparent;
+    color: #D8DEE9;
+    border-radius: 0.25em;
+    padding: 0.25em;
+}
+
+.titlebar button:hover {
+    background-color: rgba(136,192,208,0.15);
+    color: #88C0D0;
+}
+
+.progress-bar, .levelbar {
+    background-color: #4C566A;
+    border-radius: 0.25em;
+}
+
+.progress-bar .progress, .levelbar .level {
+    background-color: #88C0D0;
+    border-radius: 0.25em;
+}
+
+.switch {
+    background-color: #4C566A;
+    border-radius: 0.5em;
+    width: 2em;
+    height: 1em;
+}
+
+.switch:checked {
+    background-color: #88C0D0;
+}
+
+.switch-handle {
+    background-color: #ECEFF4;
+    border-radius: 50%;
+    width: 0.875em;
+    height: 0.875em;
+}
+
+.tabs, .tab-bar {
+    background-color: #3B4252;
+    color: #ECEFF4;
+    border-radius: 0.25em;
+}
+
+.tab {
+    padding: 0.5em 1em;
+    color: #D8DEE9;
+    background-color: transparent;
+}
+
+.tab:selected, .tab:active {
+    background-color: #4C566A;
+    color: #88C0D0;
+    border-bottom: 0.125em solid #88C0D0;
+}
+
+.headerbar {
+    background-color: #323D4D;
+    color: #ECEFF4;
+    padding: 0.5em 0.75em;
+    border-bottom: 0.0625em solid rgba(67,76,94,0.6);
+    border-radius: 0.25em 0.25em 0 0;
+}
+

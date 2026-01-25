@@ -1,0 +1,56 @@
+/* --- EL CANAL (TROUGH) --- */
+scale trough {
+    /* 6px -> 0.375em */
+    border-radius: 0.375em;
+    background-color: @lumina_surface;
+    /* 1px -> 0.0625em */
+    border: 0.0625em solid @lumina_outline;
+    /* Grosor base del canal: 6px -> 0.375em */
+    min-height: 0.375em;
+    outline: none;
+}
+
+/* --- EL PROGRESO (HIGHLIGHT) --- */
+scale highlight {
+    background-color: @lumina_primary;
+    /* Debe coincidir o ser ligeramente mayor al radio del canal */
+    border-radius: 0.625em;
+}
+
+/* --- EL TIRADOR (SLIDER) --- */
+scale slider {
+    background-color: @lumina_primary;
+    border-radius: 9999px;
+    /* 16px -> 1em */
+    min-height: 1em;
+    min-width: 1em;
+    /* Centrado óptico: 4px -> 0.25em */
+    margin: -0.3125em; 
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 200ms ease;
+}
+
+
+
+/* Efecto al pasar el mouse (Halo sutil) */
+scale slider:hover {
+    /* 8px -> 0.5em */
+    box-shadow: 0 0 0 0.5em alpha(@lumina_primary, 0.15);
+}
+
+/* Efecto de presión (Crecimiento estilo Material UI) */
+scale slider:active {
+    transform: scale(1.25); 
+    /* 12px -> 0.75em */
+    box-shadow: 0 0 0 0.75em alpha(@lumina_primary, 0.2);
+}
+
+/* Estado de deshabilitado */
+scale:disabled trough {
+    background-color: alpha(@lumina_text, 0.1);
+    border-color: transparent;
+}
+
+scale:disabled slider {
+    background-color: @lumina_text_secondary;
+}

@@ -1,0 +1,121 @@
+/* ============================================================
+   LUMINA – GNOME SHELL THEME
+   ============================================================ */
+
+/* --- PANEL SUPERIOR --- */
+#panel {
+    background-color: #2D2A32; /* @lumina_bg */
+    border-bottom: 1px solid #C8C8C8; /* @lumina_outline */
+    box-shadow: none;
+}
+
+/* --- INDICADORES DEL PANEL --- */
+.panel-button {
+    color: #E0E0E0; /* @lumina_text */
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0.25em 0.5em;
+    transition: all 200ms ease;
+}
+
+.panel-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+}
+
+/* --- MENÚS DEL PANEL --- */
+.popup-menu-boxpointer {
+    background-color: #2D2A32; /* @lumina_card */
+    border: 1px solid #C8C8C8;
+    border-radius: 8px;
+    padding: 0.5em;
+    box-shadow: 0 0.625em 2.5em rgba(0, 0, 0, 0.12);
+}
+
+.popup-menu-item {
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    color: #E0E0E0;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.popup-menu-item:hover,
+.popup-menu-item:selected {
+    background-color: rgba(63, 81, 181, 0.1); /* @lumina_primary alpha */
+    color: #3F51B5; /* @lumina_primary */
+}
+
+/* --- NOTIFICACIONES --- */
+#message-tray {
+    background-color: transparent;
+}
+
+.notification {
+    background-color: #2D2A32; /* @lumina_card */
+    color: #E0E0E0;
+    border: 1px solid #C8C8C8;
+    border-radius: 8px;
+    padding: 0.5em;
+    box-shadow: 0 0.625em 2em rgba(0,0,0,0.15);
+}
+
+/* --- BOTONES DE NOTIFICACIÓN --- */
+.notification .button {
+    background-color: #3A3740;
+    color: #E0E0E0;
+    border-radius: 6px;
+    padding: 0.25em 0.5em;
+}
+
+.notification .button:hover {
+    background-color: #4B4650;
+    color: #FFFFFF;
+}
+
+/* --- OVERLAYS Y DIALOGOS SHELL --- */
+.screen-shield {
+    background-color: rgba(45, 42, 50, 0.95); /* @lumina_bg con opacidad */
+}
+
+#lockDialogGroup,
+.dialog {
+    background-color: #2D2A32;
+    border-radius: 12px;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0.625em 2em rgba(0,0,0,0.2);
+    color: #E0E0E0;
+}
+
+/* --- SWITCHES, SLIDERS Y CHECKBOXES --- */
+.switch, .slider, .checkbox {
+    border-radius: 9999px;
+    background-color: #3A3740;
+    color: #E0E0E0;
+    transition: all 200ms ease;
+}
+
+.switch:checked, .slider:active, .checkbox:checked {
+    background-color: #3F51B5; /* @lumina_primary */
+}
+
+/* --- TOOLTIP --- */
+.tooltip {
+    background-color: #322F37;
+    color: #F4EFF4;
+    padding: 0.25em 0.5em;
+    border-radius: 8px;
+    box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.2);
+    font-size: 0.875em;
+}
+
+/* --- CURSOR, SELECCIÓN Y DESTACADO --- */
+:root {
+    -shell-accent-color: #3F51B5; /* @lumina_primary */
+    -shell-selection-color: rgba(63,81,181,0.3);
+    -shell-text-color: #E0E0E0;
+}
+
+/* ============================================================
+   FIN DEL TEMA GNOME SHELL
+   ============================================================ */
+
