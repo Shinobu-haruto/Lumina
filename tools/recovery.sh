@@ -1,28 +1,88 @@
 #!/bin/sh
 
+# ==========================
+# Configuración de rutas
+# ==========================
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-THEME_DIR="$HOME/.local/share/themes/Lumina"
+
+# Detectar directorio de temas según entorno
+if [ -d "$HOME/.local/share/themes/Lumina" ]; then
+    THEME_DIR="$HOME/.local/share/themes/Lumina"
+else
+    THEME_DIR="$HOME/.themes/Lumina"
+fi
+
 MANIFEST_DIR="$BASE_DIR/manifest"
 
+# Detectar idioma
+USER_LANG="${LANG%%.*}"
+
+# ==========================
+# Mensajes por idioma
+# ==========================
+if [ "${USER_LANG#es}" != "$USER_LANG" ]; then
+    # Español
+    MSG_VERIFY="→ Verificando restos de versiones anteriores"
+    MSG_RECOVERY="Lumina UI – Modo Recovery"
+    MSG_GROUP_SEPARATOR="-----------------------------------------"
+    MSG_COMPLETE="Recovery completado correctamente\nReinicia el entorno gráfico si es necesario"
+    MSG_FILE_OK="✔"
+    MSG_FILE_MISSING="✖ Falta manifest"
+
+    GROUPS="Cinnamon:Cinnamon
+GTK3:GTK 3.0
+GTK320:GTK 3.20
+GTK324:GTK 3.24
+GTK4:GTK 4.0
+GNOME:GNOME Shell
+Metacity:Metacity
+XFWM4:XFWM4
+KDE:KDE"
+else
+    # Inglés
+    MSG_VERIFY="→ Checking leftovers from previous versions"
+    MSG_RECOVERY="Lumina UI – Recovery Mode"
+    MSG_GROUP_SEPARATOR="-----------------------------------------"
+    MSG_COMPLETE="Recovery completed successfully\nRestart the graphical session if needed"
+    MSG_FILE_OK="✔"
+    MSG_FILE_MISSING="✖ Missing manifest"
+
+    GROUPS="Cinnamon:Cinnamon
+GTK3:GTK 3.0
+GTK320:GTK 3.20
+GTK324:GTK 3.24
+GTK4:GTK 4.0
+GNOME:GNOME Shell
+Metacity:Metacity
+XFWM4:XFWM4
+KDE:KDE"
+fi
+
+# ==========================
+# Inicio del recovery
+# ==========================
 echo ""
-echo "→ Verificando restos de versiones anteriores"
+echo "$MSG_VERIFY"
 "$BASE_DIR/tools/cleanup.sh" --dry-run
 
-
+echo ""
 echo "========================================="
-echo " Lumina UI – Recovery Mode"
+echo " $MSG_RECOVERY"
 echo "========================================="
 sleep 1
 
+# ==========================
+# Funciones de restauración
+# ==========================
 restore_file() {
     SRC="$1"
     DST="$2"
 
     if [ -f "$SRC" ]; then
         cp "$SRC" "$DST"
-        echo "✔ $(basename "$DST")"
+        echo "$MSG_FILE_OK $(basename "$DST")"
     else
-        echo "✖ Falta manifest: $(basename "$SRC")"
+        echo "$MSG_FILE_MISSING: $(basename "$SRC")"
     fi
 }
 
@@ -39,63 +99,22 @@ restore_group() {
     done
 }
 
+# ==========================
+# Restaurar todos los grupos
+# ==========================
 echo ""
-echo "→ Cinnamon"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/cinnamon" \
-              "$THEME_DIR/cinnamon/shell"
+while IFS=: read -r DIR_NAME LABEL; do
+    echo "→ $LABEL"
+    echo "$MSG_GROUP_SEPARATOR"
+    restore_group "$MANIFEST_DIR/$DIR_NAME" "$THEME_DIR/$DIR_NAME"
+    echo ""
+done <<EOF
+$GROUPS
+EOF
 
-echo ""
-echo "→ GTK 3.0"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/gtk3" \
-              "$THEME_DIR/gtk-3.0/interface"
-
-echo ""
-echo "→ GTK 3.20"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/gtk320" \
-              "$THEME_DIR/gtk-3.20/interface"
-
-echo ""
-echo "→ GTK 3.24"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/gtk324" \
-              "$THEME_DIR/gtk-3.24/interface"
-
-echo ""
-echo "→ GTK 4.0"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/gtk4" \
-              "$THEME_DIR/gtk-4.0"
-
-echo ""
-echo "→ GNOME Shell"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/gnome-shell" \
-              "$THEME_DIR/gnome-shell"
-
-echo ""
-echo "→ Metacity"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/metacity" \
-              "$THEME_DIR/metacity-1"
-
-echo ""
-echo "→ XFWM4"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/xfwm4" \
-              "$THEME_DIR/xfwm4"
-
-echo ""
-echo "→ KDE"
-echo "-----------------------------------------"
-restore_group "$MANIFEST_DIR/kde" \
-              "$THEME_DIR/kde"
-
-echo ""
+# ==========================
+# Fin del recovery
+# ==========================
 echo "========================================="
-echo " Recovery completado correctamente"
-echo " Reinicia el entorno gráfico si es necesario"
+echo "$MSG_COMPLETE"
 echo "========================================="
-
