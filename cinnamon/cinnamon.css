@@ -1,18 +1,18 @@
+@import url("shell/lumina.ui.shell.startmenu.scss");
+@import url("shell/lumina.ui.shell.dialog.scss");
+@import url("shell/lumina.ui.shell.workspace.scss");
+@import url("shell/lumina.ui.shell.calendar.scss");
+@import url("shell/lumina.ui.shell.shell.scss");
 
-stage {
-    font-family: "sans-serif", Noto Sans;
-    font-size: 1em;
-    color: #2E3440;
-}
 
 #panel, #panel-container, .panel-background {
     background-color: #F0F2F5 !important;
-    color: #2E3440 !important;
+    color: rgb(107, 93, 211) !important;
     height: 32px !important; 
 }
 
-.panel-top { border-bottom: 4px solid #5E81AC !important; }
-.panel-bottom { border-top: 4px solid #5E81AC !important; }
+.panel-top { border-bottom: 4px solid rgb(107, 93, 211) !important; }
+.panel-bottom { border-top: 4px solid rgb(107, 93, 211) !important; }
 
 .panel-left-side { border-right: 4px solid #5E81AC !important; background-color: #F0F2F5 !important; }
 .panel-right-side { border-left: 4px solid #5E81AC !important; background-color: #F0F2F5 !important; }
@@ -20,89 +20,33 @@ stage {
 .panel-button, .applet-box, .window-list-item-box {
     background-color: transparent !important;
     border-radius: 0px !important;
-    padding: 0 10px !important;
+    padding: 0.5em 1em !important;
     color: #4C566A;
     font-weight: 700;
     transition: none !important;
 }
 
 .panel-button:hover, .applet-box:hover, .window-list-item-box:hover {
-    background-color: #E5E9F0 !important;
-    color: #5E81AC !important;
+    background-color: rgb(107, 93, 211) !important;
+    color: rgb(255,255,255) !important;
+    border-radius: 0.5em;
 }
 
 .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box.active {
-    background-color: rgba(94, 129, 172, 0.1) !important;
-    color: #5E81AC !important;
+    background-color: rgb(107, 93, 211) !important;
+    color: rgb(255,255,255) !important;
     box-shadow: inset 0 -3px 0 #5E81AC !important;
+    padding: 0 0.75em;
 }
 
-.menu {
-    background-color: #F0F2F5 !important;
-    border: 1px solid #D8DEE9 !important;
-    border-radius: 0px !important;
-    color: #2E3440 !important;
-    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1) !important;
-}
-
-.menu-search-box {
-    background-color: #E5E9F0;
-    border-bottom: 1px solid #D8DEE9;
-    padding: 12px;
-}
-
-.menu-search-entry {
-    background-color: #FFFFFF !important;
-    border: 1px solid #D8DEE9 !important;
-    border-bottom: 2px solid #5E81AC !important;
-    border-radius: 0px !important;
-    color: #2E3440;
-    padding: 10px 14px;
-    caret-color: #5E81AC;
-    width: 100%;
-}
-.menu-categories-box {
-    background-color: #E5E9F0 !important;
-    border-right: 1px solid #D8DEE9 !important;
-    padding: 4px;
-}
-
-.menu-applications-inner-box {
-    background-color: #F0F2F5 !important;
-    padding: 4px;
-}
-
-.menu-category-button {
-    border-radius: 0px !important;
-    padding: 8px 12px !important;
-    color: #4C566A;
-}
-
-.menu-category-button-selected {
-    background-color: #FFFFFF !important;
-    color: #5E81AC !important;
-    border-left: 4px solid #5E81AC !important;
-}
 
 #notification, #switcher-list, .osd-window {
     background-color: #F0F2F5 !important;
-    border: 1px solid #D8DEE9 !important;
+    border: 0.0625em solid #D8DEE9 !important;
     border-bottom: 4px solid #5E81AC !important;
-    border-radius: 0px !important;
+    border-radius: 0.375em 0.375em 0.375em 0.375em !important;
+    padding: 0.375em;
     color: #2E3440 !important;
-}
-
-.menu StScrollView StScrollBar { width: 4px; }
-.menu StScrollView StScrollBar StButton#vhandle {
-    background-color: rgba(94, 129, 172, 0.3);
-    border-radius: 0px;
-}
-
-.popup-slider-menu-item {
-    -slider-height: 4px !important;
-    -slider-active-background-color: #5E81AC !important;
-    -slider-handle-radius: 0px !important;
-    -slider-handle-width: 12px !important;
 }
 
 .resize-handle { background-color: #5E81AC; border: 1px solid #F0F2F5; }
@@ -115,3 +59,15 @@ stage {
     font-size: 7pt !important;
     font-weight: bold !important;
 }
+
+/* Hover en el panel imitando tus Window Controls */
+.panel-button:hover, .applet-box:hover {
+    background-color: rgba(107,93,211, 0.12) !important; /* button_control_hover */
+    color: rgb(107,93,211) !important;
+}
+
+/* Botón de cerrar notificaciones (Semántica de peligro) */
+.notification-button:hover {
+    background-color: rgba(192,54,44, 0.15) !important; /* button_close_hover */
+}
+

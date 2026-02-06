@@ -1,0 +1,209 @@
+#RunDialog {
+    background-color: #F0F2F5 !important;
+    border: 1px solid #D8DEE9 !important;
+    border-bottom: 4px solid #5E81AC !important;
+    border-radius: 0px !important;
+    color: #2E3440 !important;
+    padding: 15px;
+}
+
+.run-dialog-entry {
+    background-color: #FFFFFF !important;
+    border: 1px solid #D8DEE9 !important;
+    color: #2E3440 !important;
+    selection-background-color: #5E81AC !important;
+    caret-color: #2E3440 !important;
+}
+
+.tooltip {
+    background-color: #2E3440 !important; /* Nord Dark para contraste */
+    color: #ECEFF4 !important;
+    border: 1px solid #3B4252 !important;
+    border-radius: 0px !important;
+    padding: 4px 8px !important;
+    font-size: 0.9em;
+}
+
+/* Caja general de cada applet en el tray */
+.applet-box {
+    padding-left: 4px;
+    padding-right: 4px;
+    spacing: 4px;
+    color: #4C566A; /* Gris Nord para iconos inactivos */
+    transition-duration: 150ms;
+}
+
+/* Hover con el estilo de tus Window Controls */
+.applet-box:hover {
+    background-color: rgba(107, 93, 211, 0.12) !important;
+    color: rgb(107, 93, 211) !important;
+    border-radius: 0.375em !important;
+}
+
+.popup-menu-content {
+ border: none !important;
+ background-color: transparent !important;
+ border-radius: 0.375em 0.375em 0 0;
+ box-shadow: 0.0625em 0.0625em 0;
+ }
+ 
+ .popup-separator-menu-item {
+    -margin-horizontal: 1.5em;
+    height: 1px !important;
+    background-color: #D8DEE9 !important;
+    border: none !important;
+}
+
+.popup-slider-menu-item {
+    -slider-active-background-color: rgb(107,93,211) !important;
+    -slider-inactive-background-color: rgba(120, 118, 130, 0.18) !important;
+    -slider-handle-radius: 0px !important;
+}
+
+/* El cuadro grande del conmutador */
+#switcher-list {
+    background-color: #F0F2F5 !important;
+    border: 1px solid #D8DEE9 !important;
+    border-bottom: 4px solid rgb(107, 93, 211) !important;
+    border-radius: 0.375em !important;
+    color: #2E3440 !important;
+    padding: 20px !important;
+    box-shadow: 0.5em 0.5em 0 rgba(0,0,0,0.05) !important;
+}
+
+/* El área donde se listan las aplicaciones */
+.switcher-list-item-container {
+    padding: 10px;
+}
+
+/* Aplicación no seleccionada */
+.item-box {
+    padding: 12px;
+    border-radius: 0.375em !important;
+    transition-duration: 100ms;
+}
+
+
+.item-box:outlined,
+.item-box:selected {
+    background-color: rgb(107, 93, 211) !important;
+    color: #FFFFFF !important;
+    border-radius: 0.375em !important;
+}
+
+.switcher-arrow {
+    border-color: rgba(0,0,0,0);
+    color: rgb(107, 93, 211);
+}
+
+.thumbnail-label {
+    padding: 4px 12px;
+    background-color: rgba(107, 93, 211, 0.1);
+    color: rgb(27, 26, 31);
+    border-radius: 0.375em;
+    margin-top: 4px;
+}
+
+/* Iconos nativos del panel */
+.applet-icon {
+    color: #4C566A; /* Color base */
+    icon-size: 1.15em;
+}
+
+/* Forzar que los iconos del tray sigan el color del texto cuando hay hover */
+.applet-box:hover .applet-icon {
+    color: rgb(107, 93, 211) !important;
+}
+
+/* Iconos de aplicaciones externas en el tray */
+.system-tray-icon {
+    padding: 2px;
+    spacing: 4px;
+}
+
+/* El pequeño popup de iconos ocultos */
+.systray-menu {
+    background-color: #F0F2F5 !important;
+    border: 1px solid #D8DEE9 !important;
+    border-radius: 0.375em !important;
+    padding: 6px;
+}
+
+/* El cuadro central de apagado */
+.end-session-dialog {
+    background-color: #F0F2F5 !important;
+    border: 1px solid #D8DEE9 !important;
+    border-bottom: 4px solid rgb(107, 93, 211) !important;
+    border-radius: 0.375em !important;
+    color: #2E3440 !important;
+    padding: 2em !important;
+    box-shadow: 0.5em 0.5em 0 rgba(0,0,0,0.05) !important;
+}
+
+/* Títulos y etiquetas */
+.end-session-dialog-subject {
+    font-weight: bold;
+    color: rgb(107, 93, 211);
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+.end-session-dialog-description {
+    color: #4C566A;
+}
+
+/* Botones de acción (Apagar, Reiniciar, etc) */
+.end-session-dialog-button {
+    background-color: #FFFFFF !important;
+    border: 1px solid #D8DEE9 !important;
+    border-radius: 0.375em !important;
+    color: #2E3440 !important;
+    padding: 0.75em 1.5em !important;
+    transition-duration: 150ms;
+}
+
+/* Hover: El efecto morado suave que definiste */
+.end-session-dialog-button:hover {
+    background-color: rgba(107, 93, 211, 0.12) !important;
+    border-color: rgb(107, 93, 211) !important;
+    color: rgb(107, 93, 211) !important;
+}
+
+/* Botón de cancelar (estilo neutro) */
+.end-session-dialog-button:active {
+    background-color: rgb(107, 93, 211) !important;
+    color: white !important;
+}
+
+/* El icono de la aplicación que impide el cierre si existe */
+.end-session-dialog-app-list-item StIcon {
+    icon-size: 2em;
+    color: #4C566A;
+}
+
+/* El contador de segundos */
+.end-session-dialog-timer {
+    color: rgb(107, 93, 211);
+    font-weight: bold;
+}
+
+.osd-window StIcon {
+    icon-size: 4em; /* Tamaño grande para visibilidad central */
+    color: rgb(107, 93, 211) !important; /* Tu morado Lumina */
+    padding: 10px;
+}
+
+.osd-window .osd-monitor-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2E3440 !important;
+}
+
+.osd-monitor-label {
+    background-color: #F0F2F5 !important;
+    color: #2E3440 !important;
+    border: 1px solid #D8DEE9 !important;
+    border-radius: 0.375em !important;
+    padding: 0.5em 1em;
+}
+

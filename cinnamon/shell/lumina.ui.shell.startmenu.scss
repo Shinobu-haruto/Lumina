@@ -1,18 +1,21 @@
 .menu,
+.menu-background,
+.menu.popup-menu-background,
 .popup-menu,
 .popup-combo-menu,
 .popup-sub-menu,
-.popup-menu-item{
+.popup-menu-item {
     background-color: #F0F2F5 !important;
-    border: 0.0625em solid #D8DEE9;
-    border-radius: 0;
+    background-image: none;
+    border-bottom: 0.0625em solid #D8DEE9;
+    border-radius: 0.375em 0.375em 0.375em 0.375em;
     color: #2E3440 !important;
     box-shadow: 0.375em 0.375em 0 rgba(0,0,0,0.1);
 }
 
 /* Buscador */
 .menu-search-box {
-    background-color: #E5E9F0;
+    background-color: #F0F2F5 !important;
     border-bottom: 0.0625em solid #D8DEE9;
     padding: 0.75em;
 }
@@ -30,26 +33,153 @@
 
 /* Paneles internos de menú */
 .menu-categories-box {
-    background-color: #E5E9F0;
+    background-color: #F0F2F5 !important;
     border-right: 0.0625em solid #D8DEE9;
-    padding: 0.25em;
+    padding: 0.5em 0.75em;
 }
 
 .menu-applications-inner-box {
-    background-color: #F0F2F5;
+    background-color: #F0F2F5 !important;
     padding: 0.25em;
 }
 
+.menu-applications-button-selected {
+ background-color: #F0F2F5 !important;
+    border-right: 0.0625em solid #D8DEE9;
+    padding: 0.5em 0.75em;
+ }
+ 
 /* Categorías */
 .menu-category-button {
-    border-radius: 0;
+    border-radius: 0.375em 0.375em 0.375em 0.375em;
     padding: 0.5em 0.75em;
     color: #4C566A;
 }
 
 .menu-category-button-selected {
-    background-color: #FFFFFF;
-    color: #5E81AC;
+    background-color: rgb(107, 93, 211) !important;
+    color: rgb(255,255,255) !important;
     border-left: 0.25em solid #5E81AC;
 }
+
+.menu-favorites-box {
+  margin: auto;
+  margin-bottom: 6px;
+  padding: 6px;
+  transition-duration: 300;
+  background-color: #F0F2F5 !important;
+  border: none;
+  border-radius: 12px;
+}
+
+.menu-favorites-button {
+  padding: 0.5em 0.75em;
+  border: none;
+  border-radius: 0.375em 0.375em 0.375em 0.375em;
+}
+
+.menu-favorites-button:hover {
+  border-radius: 0.375em 0.375em 0.375em 0.375em;
+  background-color: rgb(107, 93, 211) !important;
+    color: rgb(255,255,255) !important;
+}
+
+.menu-places-box {
+  margin: auto;
+  padding: 9px;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.menu-places-button {
+  padding: 0.5em 0.75em;
+  border-radius: 0.375em 0.375em 0.375em 0.375em;
+}
+
+.menu-application-button-selected:highlighted {
+  font-weight: bold;
+  background-color: rgb(107, 93, 211) !important;
+}
+
+.menu-application-button-label:ltr {
+  padding-left: 6px;
+}
+
+.menu-application-button-label:rtl {
+  padding-right: 6px;
+}
+
+/* Limpieza de botones de aplicación */
+.menu StScrollView.menu-application-button {
+    background-color: transparent !important; /* Deja que el fondo del menú mande */
+    border-radius: 0.375em;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:active {
+    background-color: rgb(107, 93, 211) !important;
+    color: white !important;
+    border-radius: 0.375em;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item {
+  padding: 0;
+  spacing: 0;
+  margin: 0 3px;
+  border-radius: 12px;
+  background-color: #F0F2F5 !important;
+    border-right: 0.0625em solid #D8DEE9;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:ltr {
+  padding-left: 6px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:rtl {
+  padding-right: 6px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:active {
+  border-image: none;
+  background-color: rgb(107, 93, 211) !important;
+  color: rgb(255,255,255) !important;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item StIcon {
+  min-width: 22px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item StLabel:ltr {
+  padding: 6px 0 6px 6px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item StLabel:rtl {
+  padding: 6px 6px 6px 0;
+}
+
+.osd-window, .info-osd {
+    background-color: #F0F2F5 !important;
+    color: #2E3440 !important;
+    border: 1px solid #D8DEE9 !important;
+    border-radius: 0.375em !important;
+}
+
+.osd-window .level {
+    background-color: #D8DEE9 !important;
+}
+
+.osd-window .level-bar {
+    background-color: rgb(107, 93, 211) !important;
+}
+
+.menu StScrollView StScrollBar { width: 4px; }
+.menu StScrollView StScrollBar StButton#vhandle {
+    background-color: rgba(107, 93, 211, 0.3) !important;
+    border-radius: 0px;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked {
+ background-color: rgb(107,93,211) !important;
+ color: rgb(255,255,255);
+}
+
 
