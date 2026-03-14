@@ -1,3 +1,26 @@
+/*
+================================================================================
+LUMINA EDITION | Codename: Zenith
+--------------------------------------------------------------------------------
+Variant: Aurora | ShellExperience
+Developer: Shinobu-Haruto
+Engine: Python3 | Lumina-API Core
+--------------------------------------------------------------------------------
+License: MIT
+Copyright (c) 2026 Shinobu-Haruto
+--------------------------------------------------------------------------------
+Last Build Sync: 2026-03-13 20:50:00
+Status: Production | Module Active
+--------------------------------------------------------------------------------
+Description: 
+  The Aurora Shell interface. This stylesheet governs the luminescence,
+  transparency, and spatial rendering of the Zenith desktop environment.
+  
+  "Light becomes data. Data becomes interface."
+--------------------------------------------------------------------------------
+Source: https://github.com/Shinobu-haruto/Lumina-API
+================================================================================
+*/
 @import url("shell/lumina.ui.shell.startmenu.scss");
 @import url("shell/lumina.ui.shell.dialog.scss");
 @import url("shell/lumina.ui.shell.workspace.scss");
@@ -6,24 +29,28 @@
 
 
 #panel, #panel-container, .panel-background {
-    background-color: #F0F2F5 !important;
+    background-color: rgba(251,250,255, 0.6) !important;
     color: rgb(107, 93, 211) !important;
-    height: 32px !important; 
+    height: 32px !important;
+    border-radius: 0.5em; 
 }
 
-.panel-top { border-bottom: 4px solid rgb(107, 93, 211) !important; }
-.panel-bottom { border-top: 4px solid rgb(107, 93, 211) !important; }
+.panel-button:active {
+    transform: scale(0.98);
+}
+.panel-top { border-bottom: 4px solid rgb(107, 93, 211) !important; border-radius: 0.5em;}
+.panel-bottom { border-top: 1px solid rgb(107, 93, 211) !important; border-radius: 0.5em; }
 
 .panel-left-side { border-right: 4px solid #5E81AC !important; background-color: #F0F2F5 !important; }
 .panel-right-side { border-left: 4px solid #5E81AC !important; background-color: #F0F2F5 !important; }
 
 .panel-button, .applet-box, .window-list-item-box {
     background-color: transparent !important;
-    border-radius: 0px !important;
+    border-radius: 0.5em !important;
     padding: 0.5em 1em !important;
     color: #4C566A;
     font-weight: 700;
-    transition: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease !important;
 }
 
 .panel-button:hover, .applet-box:hover, .window-list-item-box:hover {
@@ -32,6 +59,11 @@
     border-radius: 0.5em;
 }
 
+.panel-button:focus, .applet-box:focus {
+    outline: 2px solid #5E81AC !important;
+    outline-offset: -2px;
+    background-color: rgba(107, 93, 211, 0.2) !important;
+}
 .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box.active {
     background-color: rgb(107, 93, 211) !important;
     color: rgb(255,255,255) !important;
@@ -45,7 +77,7 @@
     border: 0.0625em solid #D8DEE9 !important;
     border-bottom: 4px solid #5E81AC !important;
     border-radius: 0.375em 0.375em 0.375em 0.375em !important;
-    padding: 0.375em;
+    padding: 0.0.75em;
     color: #2E3440 !important;
 }
 
@@ -60,14 +92,19 @@
     font-weight: bold !important;
 }
 
-/* Hover en el panel imitando tus Window Controls */
 .panel-button:hover, .applet-box:hover {
-    background-color: rgba(107,93,211, 0.12) !important; /* button_control_hover */
+    background-color: rgba(107,93,211, 0.12) !important;
     color: rgb(107,93,211) !important;
 }
 
-/* Botón de cerrar notificaciones (Semántica de peligro) */
 .notification-button:hover {
-    background-color: rgba(192,54,44, 0.15) !important; /* button_close_hover */
+    background-color: rgba(192,54,44, 0.15) !important;
 }
 
+.notification.success {
+    border-bottom: 4px solid #A3BE8C !important;
+}
+
+.notification.warning {
+    border-bottom: 4px solid #EBCB8B !important; /* Amarillo nórdico */
+}
