@@ -1,5 +1,29 @@
-Lumina UI
-Release: 2601
-Build: 2124
-Channel: dev
-Date: 2026-01-24
+# LUMINA PROJECT - BUILD MANIFEST
+# ===============================
+
+BUILD_ID: 2248
+CODENAME: ZENITH
+ENGINE_VERSION: 1.1.0-alpha
+SHELL_VARIANT: Aurora
+STATUS: DEVELOPMENT (Migration to Qt6 & Modular Architecture)
+
+SUPPORTED_EXTENSIONS:
+- .luxm (Logic/Modules)
+- .luxres (Assets/Resources)
+- .lumtheme (QSS Style Profiles)
+
+ROADMAP:
+- Phase 1: Cinnamon/Aurora Shell (Maintained Compatibility)
+- Phase 2: Zenith-Host Modular Engine (Implemented)
+- Phase 3: Qt6 Native Migration (In Progress)
+- Phase 4: Custom XSession Initialization (Planned)
+
+DEVELOPER_NOTE:
+  "The Zenith architecture is undergoing a transition to Qt6 native rendering. 
+  Future builds will utilize .lumtheme files for dynamic styling via the 
+  Zenith Style Engine."
+
+AUTHOR: Shinobu-Haruto
+DATE: 2026-03-13 21:07:00
+LICENSE: MIT
+================================================================================
